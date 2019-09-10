@@ -1,0 +1,8 @@
+
+./tools/vspec2franca_attributes.py -p Vehicle.Drivetrain -m Vehicle.Drivetrain.FuelSystem -n FuelSystem -v $(cat VERSION) -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$(cat VERSION)_attributes.fidl ; cat vss_rel_2.0.0-alpha+006_attributes.fidl
+
+./tools/vspec2franca_attributes.py -p Vehicle -m Vehicle.Drivetrain -n Drivetrain -v $(cat VERSION) -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$(cat VERSION)_attributes.fidl ; cat vss_rel_2.0.0-alpha+006_attributes.fidl ^C
+
+./tools/vspec2franca_attributes.py -p Vehicle -m Vehicle.Drivetrain.FuelSystem -n Drivetrain -v $(cat VERSION) -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$(cat VERSION)_attributes.fidl ; cat vss_rel_2.0.0-alpha+006_attributes.fidl ^C
+
+
