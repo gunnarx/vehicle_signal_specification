@@ -13,6 +13,7 @@ import yaml
 import json
 import os
 import uuid
+import sys
 
 class VSpecError(Exception):
     def __init__(self, *args, **kwargs):

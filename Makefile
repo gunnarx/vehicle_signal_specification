@@ -4,7 +4,7 @@
 
 .PHONY: clean all json franca c
 
-all: clean json franca csv c
+all: clean json franca franca_attributes csv c
 
 DESTDIR?=/usr/local
 
@@ -14,6 +14,8 @@ json:
 franca:
 	./tools/vspec2franca.py -v $$(cat VERSION) -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).fidl
 
+franca_attributes:
+	./tools/vspec2franca_attributes.py -p Vehicle.Drivetrain -n FuelSystem -v $$(cat VERSION) -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION)_attributes.fidl
 
 csv:
 	./tools/vspec2csv.py -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).csv
