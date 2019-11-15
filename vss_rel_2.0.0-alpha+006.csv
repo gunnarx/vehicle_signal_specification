@@ -1,0 +1,1448 @@
+Signal,Id,Type,DataType,Unit,Min,Max,Desc,Enum,Sensor,Actuator
+Vehicle,"4961","branch","","","","","Highlevel vehicle data.","","",""
+Vehicle.VehicleIdentification,"4525","branch","","","","","Attributes that identify a vehicle","","",""
+Vehicle.VehicleIdentification.VIN,"4960","attribute","string","","","","17-character Vehicle Identification Number (VIN) as defined by ISO 3779","","","",[]
+Vehicle.VehicleIdentification.WMI,"1179","attribute","string","","","","3-character World Manufacturer Identification (WMI) as defined by ISO 3780","","","",[]
+Vehicle.VehicleIdentification.Brand,"1180","attribute","string","","","","Vehicle brand or manufacturer","","","",[]
+Vehicle.VehicleIdentification.Model,"1181","attribute","string","","","","Vehicle model","","","",[]
+Vehicle.VehicleIdentification.Year,"1182","attribute","uint16","","","","Model year of the vehicle","","","",[]
+Vehicle.VehicleIdentification.ACRISSCode,"1183","attribute","string","","","","The ACRISS Car Classification Code is a code used by many car rental companies.","","","",[]
+Vehicle.VehicleIdentification.bodyType,"1184","attribute","string","","","","Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).","","","",[]
+Vehicle.VehicleIdentification.dateVehicleFirstRegistered,"1185","attribute","string","","","","The date of the first registration of the vehicle with the respective public authorities.","","","",[]
+Vehicle.VehicleIdentification.meetsEmissionStandard,"1186","attribute","string","","","","Indicates that the vehicle meets the respective emission standard.","","","",[]
+Vehicle.VehicleIdentification.productionDate,"1187","attribute","string","","","","The date of production of the item, e.g. vehicle.","","","",[]
+Vehicle.VehicleIdentification.purchaseDate,"1188","attribute","string","","","","The date the item e.g. vehicle was purchased by the current owner.","","","",[]
+Vehicle.VehicleIdentification.vehicleModelDate,"1189","attribute","string","","","","The release date of a vehicle model (often used to differentiate versions of the same make and model).","","","",[]
+Vehicle.VehicleIdentification.vehicleConfiguration,"1190","attribute","string","","","","A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.","","","",[]
+Vehicle.VehicleIdentification.vehicleSeatingCapacity,"1191","attribute","uint16","","","","The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.","","","",[]
+Vehicle.VehicleIdentification.vehicleSpecialUsage,"1192","attribute","string","","","","Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school.","","","",[]
+Vehicle.VehicleIdentification.vehicleinteriorColor,"4961","attribute","string","","","","A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.","","","",[]
+Vehicle.VehicleIdentification.vehicleinteriorType,"3423","attribute","string","","","","The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.).","","","",[]
+Vehicle.VehicleIdentification.knownVehicleDamages,"1195","attribute","string","","","","A textual description of known damages, both repaired and unrepaired.","","","",[]
+Vehicle.IgnitionOnTime,"1196","sensor","uint32","s","","","Accumulated ignition on time in seconds.","","","",[]
+Vehicle.IgnitionOffTime,"1197","sensor","uint32","s","","","Accumulated ignition off time in seconds.","","","",[]
+Vehicle.DriveTime,"1198","sensor","uint32","s","","","Accumulated drive time in seconds.","","","",[]
+Vehicle.IdleTime,"1199","sensor","uint32","s","","","Accumulated idle time in seconds.","","","",[]
+Vehicle.Speed,"1200","sensor","int32","km/h","-250","250","Vehicle speed, as sensed by the gearbox.","","","",[]
+Vehicle.TravelledDistance,"1201","sensor","float","km","","","Odometer reading","","","",[]
+Vehicle.TripMeterReading,"1202","sensor","float","km","","","Current trip meter reading","","","",[]
+Vehicle.AmbientAirTemperature,"1203","sensor","float","celsius","","","Ambient air temperature","","","",[]
+Vehicle.IsMoving,"1204","sensor","boolean","","","","Indicates whether the vehicle is stationary or moving","","","",[]
+Vehicle.AverageSpeed,"1205","sensor","int32","km/h","-250","250","Average speed for the current trip","","","",[]
+Vehicle.Acceleration,"4526","branch","","","","","Spatial acceleration","","",""
+Vehicle.Acceleration.Longitudinal,"1206","sensor","int32","m/s2","","","Vehicle acceleration in X (longitudinal acceleration).","","","",[]
+Vehicle.Acceleration.Lateral,"1207","sensor","int32","m/s2","","","Vehicle acceleration in Y (lateral acceleration).","","","",[]
+Vehicle.Acceleration.Vertical,"1208","sensor","int32","m/s2","","","Vehicle acceleration in Z (vertical acceleration).","","","",[]
+Vehicle.AngularVelocity,"4527","branch","","","","","Spatial rotation","","",""
+Vehicle.AngularVelocity.Roll,"1209","sensor","int16","degrees/s","","","Vehicle rotation rate along X (longitudinal).","","","",[]
+Vehicle.AngularVelocity.Pitch,"1210","sensor","int16","degrees/s","","","Vehicle rotation rate along Y (lateral).","","","",[]
+Vehicle.AngularVelocity.Yaw,"1211","sensor","int16","degrees/s","","","Vehicle rotation rate along Z (vertical).","","","",[]
+Vehicle.RoofLoad,"1212","attribute","int16","kg","","","The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.","","","",[]
+Vehicle.accelerationTime,"1213","attribute","int16","sec","","","The time needed to accelerate the vehicle from a given start velocity to a given target velocity.","","","",[]
+Vehicle.cargoVolume,"1214","attribute","int16","litres","0","100","The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.","","","",[]
+Vehicle.emissionsCO2,"1215","attribute","int16","g/km","","","The CO2 emissions in g/km.","","","",[]
+Vehicle.Private,"4528","branch","","","","","Uncontrolled branch where non-public signals can be defined.","","",""
+Vehicle.Media,"4529","branch","","","","","Media service data.","","",""
+Vehicle.Media.Collections,"","rbranch","","","","","The media collections can also be understood as media queues of the renderer. Media collections can only contain playable media like tracks, videos or pictures.","","","",[]
+Vehicle.Media.Items,"","rbranch","","","","","The media item object ...","","","",[]
+Vehicle.Drivetrain,"4530","branch","","","","","Drivetrain data for internal combustion engines, transmissions, electric motors, etc.","","",""
+Vehicle.Drivetrain.InternalCombustionEngine,"4531","branch","","","","","Engine-specific data, stopping at the bell housing.","","",""
+Vehicle.Drivetrain.InternalCombustionEngine.Displacement,"3424","attribute","uint16","cm3","","","Displacement in cubic centimetres.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Configuration,"3425","attribute","string","","","","Engine configuration.","unknown / straight / V / boxer / W / rotary / radial / square / H / U / opposed / X","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.MaxPower,"3426","attribute","uint16","kw","","","Peak power, in kilowatts, that engine can generate.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.MaxTorque,"3427","attribute","uint16","N.m","","","Peak power, in newton meter, that the engine can generate.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.FuelType,"3428","attribute","string","","","","Type of fuel that the engine runs on.","unknown / gasoline / diesel / E85 / CNG","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine,"4532","branch","","","","","Engine signals","","",""
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.Speed,"3429","sensor","uint16","rpm","0","20000","Engine speed measured as rotations per minute.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.ECT,"3430","sensor","int16","celsius","-50","200","Engine coolant temperature.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.EOT,"3431","sensor","int16","celsius","-50","300","Engine oil temperature.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.MAP,"3432","sensor","int16","kpa","0","1000","Manifold air pressure possibly boosted using forced induction.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.MAF,"3433","sensor","int16","g/s","0","3000","Grams of air drawn into engine per second.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.TPS,"3434","sensor","int8","percent","0","100","Current throttle position.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.EOP,"3435","sensor","int16","kpa","0","1000","Engine oil pressure.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.Power,"3436","sensor","int16","kW","0","2000","Current engine power output.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.Torque,"3437","sensor","int16","N.m","0","3000","Current engine torque.","","","",[]
+Vehicle.Drivetrain.InternalCombustionEngine.Engine.AmbientAirTemperature,"3438","sensor","float","celsius","","","Ambient (Outside) air temperature","","","",[]
+Vehicle.Drivetrain.Transmission,"4533","branch","","","","","Transmission-specific data, stopping at the drive shafts.","","",""
+Vehicle.Drivetrain.Transmission.Type,"3439","attribute","string","","","","Transmission type.","unknown / sequential / H / automatic / DSG / CVT","","",[]
+Vehicle.Drivetrain.Transmission.GearCount,"3440","attribute","uint8","","","","Number of forward gears in the transmission. -1 = CVT.","","","",[]
+Vehicle.Drivetrain.Transmission.DriveType,"3441","attribute","string","","","","Drive type.","unknown / forward wheel drive / rear wheel drive / all wheel drive","","",[]
+Vehicle.Drivetrain.Transmission.Speed,"3442","sensor","int32","km/h","-250","250","Vehicle speed, as sensed by the gearbox.","","","",[]
+Vehicle.Drivetrain.Transmission.TravelledDistance,"3443","sensor","float","km","","","Odometer reading","","","",[]
+Vehicle.Drivetrain.Transmission.Gear,"3444","actuator","int8","","-1","16","Current gear. 0=Neutral. -1=Reverse","","","",[]
+Vehicle.Drivetrain.Transmission.PerformanceMode,"3445","actuator","string","","","","Current gearbox performance mode.","normal / sport / economy / snow / rain","","",[]
+Vehicle.Drivetrain.Transmission.GearChangeMode,"3446","actuator","string","","","","Is the gearbox in automatic or manual (paddle) mode.","manual / automatic","","",[]
+Vehicle.Drivetrain.Transmission.Temperature,"3447","sensor","int16","celsius","-50","200","The current gearbox temperature","","","",[]
+Vehicle.Drivetrain.Transmission.ClutchWear,"3448","sensor","uint8","percent","","","Clutch wear as a percent. 0 = no wear. 100 = worn.","","","",[]
+Vehicle.Drivetrain.ElectricMotor,"4534","branch","","","","","Electric Motor specific data.","","",""
+Vehicle.Drivetrain.BatteryManagement,"4535","branch","","","","","Battery Management data.","","",""
+Vehicle.Drivetrain.BatteryManagement.BatteryTemperature,"3449","sensor","float","celsius","","","Temperature of the battery pack","","","",[]
+Vehicle.Drivetrain.BatteryManagement.BatteryCapacity,"3450","sensor","int8","percent","0","100","Remaining capacity of the batter pack","","","",[]
+Vehicle.Drivetrain.BatteryManagement.LowBatteryLevel,"3451","sensor","Boolean","","","","Indicates that the battery level is low","","","",[]
+Vehicle.Drivetrain.BatteryManagement.ChargingInlet,"3452","attribute","string","","","","Indicates the primary charging inlet type fitted to the vehicle","unknown / Not_Fitted / AC_Type_1 / AC_Type_2 / AC_GBT / AC_DC_Type_1_Combo / AC_DC_Type_2_Combo / DC_GBT / DC_Chademo","","",[]
+Vehicle.Drivetrain.FuelSystem,"4536","branch","","","","","Fuel system data.","","",""
+Vehicle.Drivetrain.FuelSystem.FuelType,"3453","attribute","string","","","","Defines the fuel type of the vehicle","unknown / gasoline / diesel / electric / hybrid / E85 / CNG / LPG","","",[]
+Vehicle.Drivetrain.FuelSystem.HybridType,"3454","attribute","string","","","","Defines the hybrid type of the vehicle","unknown / not_applicable / stop_start / belt_ISG / CIMG / PHEV","","",[]
+Vehicle.Drivetrain.FuelSystem.TankCapacity,"3455","attribute","uint16","l","","","Capacity of the fuel tank in liters","","","",[]
+Vehicle.Drivetrain.FuelSystem.Level,"3456","sensor","uint8","percent","0","100","Level in fuel tank as percent of capacity. 0 = empty. 100 = full.","","","",[]
+Vehicle.Drivetrain.FuelSystem.Range,"3457","sensor","uint32","m","","","Range in meters.","","","",[]
+Vehicle.Drivetrain.FuelSystem.InstantConsumption,"3458","sensor","float","l/100km","0","","Current consumption in liters per 100 km.","","","",[]
+Vehicle.Drivetrain.FuelSystem.AverageConsumption,"3459","sensor","float","l/100km","0","","Average consumption in liters per 100 km.","","","",[]
+Vehicle.Drivetrain.FuelSystem.ConsumptionSinceStart,"3460","sensor","float","l","","","Fuel amount consumed since start in liters.","","","",[]
+Vehicle.Drivetrain.FuelSystem.TimeSinceStart,"3461","sensor","uint32","s","","","Time elapsed since start in seconds.","","","",[]
+Vehicle.Drivetrain.FuelSystem.EngineStopStartEnabled,"3462","sensor","boolean","","","","Indicates whether eco start stop is currently enabled","","","",[]
+Vehicle.Drivetrain.FuelSystem.LowFuelLevel,"3463","sensor","boolean","","","","Indicates that the fuel level is low (e.g. <50km range)","","","",[]
+Vehicle.Drivetrain.FuelCell,"4537","branch","","","","","Fuel Cell data.","","",""
+Vehicle.Body,"4538","branch","","","","","All body components.","","",""
+Vehicle.Body.BodyType,"3464","attribute","string","","","","Body type code as defined by ISO 3779","","","",[]
+Vehicle.Body.RefuelPosition,"3465","attribute","string","","","","Location of the fuel cap or charge port","front_left / front_right / middle_left / middle_right / rear_left / rear_right","","",[]
+Vehicle.Body.Hood,"4539","branch","","","","","Hood status","","",""
+Vehicle.Body.Hood.IsOpen,"3466","actuator","boolean","","","","hood open or closed. True = Open. False = Closed","","","",[]
+Vehicle.Body.Trunk,"4540","branch","","","","","Trunk status","","",""
+Vehicle.Body.Trunk.IsOpen,"3467","actuator","boolean","","","","Trunk open or closed. True = Open. False = Closed","","","",[]
+Vehicle.Body.Trunk.IsLocked,"3468","actuator","boolean","","","","Is trunk locked or unlocked. True = Locked. False = Unlocked.","","","",[]
+Vehicle.Body.Horn,"4541","branch","","","","","Horn signals","","",""
+Vehicle.Body.Horn.IsActive,"3469","actuator","boolean","","","","Horn active or inactive. True = Active. False = Inactive.","","","",[]
+Vehicle.Body.Raindetection,"4542","branch","","","","","Rainsensor signals","","",""
+Vehicle.Body.Raindetection.intensity,"3470","sensor","uint8","percent","","","Rain intensity. 0 = Dry, No Rain. 100 = Covered.","","","",[]
+Vehicle.Body.Windshield,"4543","branch","","","","","Windshield signals","","",""
+Vehicle.Body.Windshield.Wiping,"4961","branch","","","","","Front windshield wiper signals","","",""
+Vehicle.Body.Windshield.Wiping.Status.Front,"4962","instance","string","","","","Front wiper status","off / slow / medium / fast / interval / rainsensor","","",
+Vehicle.Body.Windshield.Wiping.Status.Rear,"4962","instance","string","","","","Front wiper status","off / slow / medium / fast / interval / rainsensor","","",
+Vehicle.Body.Windshield.Heating,"4963","branch","","","","","Front windshield heater signals","","",""
+Vehicle.Body.Windshield.Heating.Status.Front,"4964","instance","boolean","","","","Front windshield heater status. 0 - off, 1 - on","","","",
+Vehicle.Body.Windshield.Heating.Status.Rear,"4964","instance","boolean","","","","Front windshield heater status. 0 - off, 1 - on","","","",
+Vehicle.Body.Windshield.WasherFluid,"4965","branch","","","","","Front windshield washer fluid signals","","",""
+Vehicle.Body.Windshield.WasherFluid.LevelLow.Front,"4966","instance","boolean","","","","Low level indication for washer fluid. True = Level Low. False = Level OK.","","","",
+Vehicle.Body.Windshield.WasherFluid.LevelLow.Rear,"4966","instance","boolean","","","","Low level indication for washer fluid. True = Level Low. False = Level OK.","","","",
+Vehicle.Body.Windshield.WasherFluid.Level.Front,"4967","instance","uint8","percent","","","Washer fluid level as a percent. 0 = Empty. 100 = Full.","","","",
+Vehicle.Body.Windshield.WasherFluid.Level.Rear,"4967","instance","uint8","percent","","","Washer fluid level as a percent. 0 = Empty. 100 = Full.","","","",
+Vehicle.Body.Lights,"4552","branch","","","","","All lights","","",""
+Vehicle.Body.Lights.IsHighBeamOn,"3479","actuator","boolean","","","","Is high beam on","","","",[]
+Vehicle.Body.Lights.IsLowBeamOn,"3480","actuator","boolean","","","","Is low beam on","","","",[]
+Vehicle.Body.Lights.IsRunningOn,"3481","actuator","boolean","","","","Are running lights on","","","",[]
+Vehicle.Body.Lights.IsBackupOn,"3482","actuator","boolean","","","","Is backup (reverse) light on","","","",[]
+Vehicle.Body.Lights.IsParkingOn,"3483","actuator","boolean","","","","Is parking light on","","","",[]
+Vehicle.Body.Lights.IsBrakeOn,"3484","actuator","boolean","","","","Is brake light on","","","",[]
+Vehicle.Body.Lights.IsRearFogOn,"3485","actuator","boolean","","","","Is rear fog light on","","","",[]
+Vehicle.Body.Lights.IsFrontFogOn,"3486","actuator","boolean","","","","Is front fog light on","","","",[]
+Vehicle.Body.Lights.IsHazardOn,"3487","actuator","boolean","","","","Are hazards on","","","",[]
+Vehicle.Body.Lights.IsLeftIndicatorOn,"3488","actuator","boolean","","","","Is left indicator flashing","","","",[]
+Vehicle.Body.Lights.IsRightIndicatorOn,"3489","actuator","boolean","","","","Is right indicator flashing","","","",[]
+Vehicle.Body.Mirrors,"4553","branch","","","","","All mirrors","","",""
+Vehicle.Body.Mirrors.Tilt.Left,"4967","instance","int8","percent","","","Mirror tilt as a percent. 0 = Center Position. 100 = Fully Upward Position. -100 = Fully Downward Position.","","","",
+Vehicle.Body.Mirrors.Tilt.Right,"4967","instance","int8","percent","","","Mirror tilt as a percent. 0 = Center Position. 100 = Fully Upward Position. -100 = Fully Downward Position.","","","",
+Vehicle.Body.Mirrors.Pan.Left,"4968","instance","int8","percent","","","Mirror pan as a percent. 0 = Center Position. 100 = Fully Left Position. -100 = Fully Right Position.","","","",
+Vehicle.Body.Mirrors.Pan.Right,"4968","instance","int8","percent","","","Mirror pan as a percent. 0 = Center Position. 100 = Fully Left Position. -100 = Fully Right Position.","","","",
+Vehicle.Body.Mirrors.Heating,"4969","branch","","","","","Mirror heater signals","","",""
+Vehicle.Body.Mirrors.Heating.Status.Left,"4970","instance","boolean","","","","Mirror Heater on or off. True = Heater On. False = Heater Off.","","","",
+Vehicle.Body.Mirrors.Heating.Status.Right,"4970","instance","boolean","","","","Mirror Heater on or off. True = Heater On. False = Heater Off.","","","",
+Vehicle.Cabin,"4558","branch","","","","","All in-cabin components, including doors.","","",""
+Vehicle.Cabin.RearShade,"4559","branch","","","","","Rear window shade.","","",""
+Vehicle.Cabin.RearShade.Switch,"3496","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",[]
+Vehicle.Cabin.RearShade.Position,"3497","actuator","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",[]
+Vehicle.Cabin.HVAC,"4560","branch","","","","","Climate control","","",""
+Vehicle.Cabin.HVAC.Station,"4974","branch","","","","","HVAC for single station in the vehicle","","",""
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row1,"4975","actuator","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row2,"4975","actuator","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row3,"4975","actuator","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row4,"4975","actuator","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row1.Left,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row1.Right,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row2.Left,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row2.Right,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row3.Left,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row3.Right,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row4.Left,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.FanSpeed.Row4.Right,"4975","instance","uint8","percent","0","100","Fan Speed, 0 = off. 100 = max","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row1,"4976","actuator","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row2,"4976","actuator","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row3,"4976","actuator","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row4,"4976","actuator","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row1.Left,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row1.Right,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row2.Left,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row2.Right,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row3.Left,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row3.Right,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row4.Left,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.Temperature.Row4.Right,"4976","instance","int8","celsius","-50","50","Temperature","","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row1,"4977","actuator","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row2,"4977","actuator","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row3,"4977","actuator","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row4,"4977","actuator","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row1.Left,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row1.Right,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row2.Left,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row2.Right,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row3.Left,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row3.Right,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row4.Left,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.Station.AirDistribution.Row4.Right,"4977","instance","string","","","","Direction of airstream","up / middle / down","","",
+Vehicle.Cabin.HVAC.IsRecirculationActive,"3522","actuator","boolean","","","","Is recirculation active.","","","",[]
+Vehicle.Cabin.HVAC.IsFrontDefrosterActive,"3523","actuator","boolean","","","","Is front defroster active.","","","",[]
+Vehicle.Cabin.HVAC.IsRearDefrosterActive,"3524","actuator","boolean","","","","Is rear defroster active.","","","",[]
+Vehicle.Cabin.HVAC.IsAirConditioningActive,"3525","actuator","boolean","","","","Is Air conditioning active.","","","",[]
+Vehicle.Cabin.HVAC.AmbientAirTemperature,"3526","sensor","float","celsius","","","Ambient air temperature","","","",[]
+Vehicle.Cabin.Infotainment,"4573","branch","","","","","Infotainment system","","",""
+Vehicle.Cabin.Infotainment.Media,"4574","branch","","","","","All Media actions","","",""
+Vehicle.Cabin.Infotainment.Media.Action,"3527","actuator","string","","","","Tells if the media was","unknown / Stop / Play / FastForward / FastBackward / SkipForward / SkipBackward","","",[]
+Vehicle.Cabin.Infotainment.Media.Played,"4575","branch","","","","","Collection of signals updated in concert when a new media is played","","",""
+Vehicle.Cabin.Infotainment.Media.Played.Source,"3528","actuator","string","","","","Media selected for playback","unknown / SiriusXM / AM / FM / DAB / TV / CD / DVD / AUX / USB / Disk / Bluetooth / Internet / Voice / Beep","","",[]
+Vehicle.Cabin.Infotainment.Media.Played.Artist,"3529","sensor","string","","","","Name of artist being played","","","",[]
+Vehicle.Cabin.Infotainment.Media.Played.Album,"3530","sensor","string","","","","Name of album being played","","","",[]
+Vehicle.Cabin.Infotainment.Media.Played.Track,"3531","sensor","string","","","","Name of track being played","","","",[]
+Vehicle.Cabin.Infotainment.Media.Played.URI,"3532","sensor","string","","","","User Resource associated with the media","","","",[]
+Vehicle.Cabin.Infotainment.Media.DeclinedURI,"3533","sensor","string","","","","URI of suggested media that was declined","","","",[]
+Vehicle.Cabin.Infotainment.Media.SelectedURI,"3534","actuator","string","","","","URI of suggested media that was selected","","","",[]
+Vehicle.Cabin.Infotainment.Media.Volume,"3535","actuator","uint8","","0","100","Current Media Volume","","","",[]
+Vehicle.Cabin.Infotainment.Navigation,"4576","branch","","","","","All navigation actions","","",""
+Vehicle.Cabin.Infotainment.Navigation.DestinationSet,"4577","branch","","","","","A navigation has been selected.","","",""
+Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Latitude,"3536","actuator","Double","degrees","-90","90","Latitude of destination","","","",[]
+Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude,"3537","actuator","Double","degrees","-180","180","Longitude of destination","","","",[]
+Vehicle.Cabin.Infotainment.Navigation.CurrentLocation,"4578","branch","","","","","The current latitude and longitude of the vehicle.","","",""
+Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Latitude,"3538","sensor","Double","degrees","-90","90","Current latitude of vehicle, as reported by GPS.","","","",[]
+Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Longitude,"3539","sensor","Double","degrees","-180","180","Current longitude of vehicle, as reported by GPS.","","","",[]
+Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Heading,"3540","sensor","Double","degrees","0","360","Current magnetic compass heading, in degrees.","","","",[]
+Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Accuracy,"3541","sensor","Double","m","","","Accuracy level of the latitude and longitude coordinates in meters.","","","",[]
+Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Altitude,"3542","sensor","Double","m","","","Current elevation of the position in meters.","","","",[]
+Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Speed,"3543","sensor","uint16","km/h","0","250","Vehicle speed, as sensed by the GPS receiver.","","","",[]
+Vehicle.Cabin.Infotainment.HMI,"4579","branch","","","","","HMI related signals","","",""
+Vehicle.Cabin.Infotainment.HMI.CurrentLanguage,"3544","sensor","string","","","","ISO 639-1 standard language code for the current HMI","","","",[]
+Vehicle.Cabin.Infotainment.HMI.DateFormat,"3545","actuator","string","","","","Date format used in the current HMI","YYYY MM DD / DD MM YYYY / MM DD YYYY / YY MM DD / DD MM YY / MM DD YY","","",[]
+Vehicle.Cabin.Infotainment.HMI.TimeFormat,"3546","actuator","string","","","","Time format used in the current HMI","12HR / 24HR","","",[]
+Vehicle.Cabin.Infotainment.HMI.DistanceUnit,"3547","actuator","string","","","","Distance unit used in the current HMI","mi / km","","",[]
+Vehicle.Cabin.Infotainment.HMI.FuelEconomyUnits,"3548","actuator","string","","","","Fuel economy unit used in the current HMI","mpg_UK / mpg_US / mpl / km/l / l/100km","","",[]
+Vehicle.Cabin.Infotainment.HMI.EVEconomyUnits,"3549","actuator","string","","","","EV fuel economy unit used in the current HMI","mi/kWh / km/kWh / kWh/100mi / kWh/100km / Wh/mi / Wh/km","","",[]
+Vehicle.Cabin.Infotainment.HMI.TemperatureUnit,"3550","actuator","string","","","","Temperature unit used in the current HMI","C / F","","",[]
+Vehicle.Cabin.Infotainment.HMI.DayNightMode,"3551","actuator","string","","","","Current display theme","Day / Night","","",[]
+Vehicle.Cabin.Sunroof,"4580","branch","","","","","Sun roof status.","","",""
+Vehicle.Cabin.Sunroof.Position,"3552","sensor","Int8","","-100","100","Sunroof position. 0 = Fully closed 100 = Fully opened. -100 = Fully tilted","","","",[]
+Vehicle.Cabin.Sunroof.Switch,"3553","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or shade.","Inactive / Close / Open / OneShotClose / OneShotOpen / TiltUp / TiltDown","","",[]
+Vehicle.Cabin.Sunroof.Shade,"4581","branch","","","","","Sun roof shade status","","",""
+Vehicle.Cabin.Sunroof.Shade.Switch,"3554","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",[]
+Vehicle.Cabin.Sunroof.Shade.Position,"3555","actuator","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",[]
+Vehicle.Cabin.RearviewMirror,"4582","branch","","","","","Rearview mirror","","",""
+Vehicle.Cabin.RearviewMirror.DimmingLevel,"3556","actuator","uint8","percent","","","Dimming level of rearview mirror. 0 = undimmed. 100 = fully dimmed","","","",[]
+Vehicle.Cabin.Lights,"4583","branch","","","","","Interior lights signals and sensors","","",""
+Vehicle.Cabin.Lights.IsGloveBoxOn,"3557","actuator","boolean","","","","Is glove box light on","","","",[]
+Vehicle.Cabin.Lights.IsTrunkOn,"3558","actuator","boolean","","","","Is trunk light light on","","","",[]
+Vehicle.Cabin.Lights.IsDomeOn,"3559","actuator","boolean","","","","Is central dome light light on","","","",[]
+Vehicle.Cabin.Lights.AmbientLight,"3560","sensor","uint8","percent","0","100","How much ambient light is detected in cabin. 0 = No ambient light. 100 = Full brightness","","","",[]
+Vehicle.Cabin.Lights.LightIntensity,"3561","sensor","uint8","percent","0","100","Intensity of the interior lights. 0 = Off. 100 = Full brightness.","","","",[]
+Vehicle.Cabin.Lights.Spotlight,"4977","branch","","","","","Spotlight for a specific area in the vehicle.","","",""
+Vehicle.Cabin.Lights.Spotlight.IsSharedOn.Row1,"4978","sensor","boolean","","","","Is a shared light across a specific row on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsSharedOn.Row2,"4978","sensor","boolean","","","","Is a shared light across a specific row on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsSharedOn.Row3,"4978","sensor","boolean","","","","Is a shared light across a specific row on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsSharedOn.Row4,"4978","sensor","boolean","","","","Is a shared light across a specific row on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row1.Left,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row1.Right,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row2.Left,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row2.Right,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row3.Left,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row3.Right,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row4.Left,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Lights.Spotlight.IsPassengerOn.Row4.Right,"4979","instance","boolean","","","","Is passenger light on","","","",
+Vehicle.Cabin.Door,"4596","branch","","","","","All doors, including windows and switches","","",""
+Vehicle.Cabin.Door.IsOpen.Row1,"4990","actuator","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row2,"4990","actuator","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row3,"4990","actuator","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row4,"4990","actuator","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row1.Left,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row1.Right,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row2.Left,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row2.Right,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row3.Left,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row3.Right,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row4.Left,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsOpen.Row4.Right,"4990","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.IsLocked.Row1,"4991","actuator","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row2,"4991","actuator","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row3,"4991","actuator","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row4,"4991","actuator","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row1.Left,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row1.Right,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row2.Left,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row2.Right,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row3.Left,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row3.Right,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row4.Left,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.IsLocked.Row4.Right,"4991","instance","boolean","","","","Is door locked or unlocked. True = Locked. False = Unlocked.","","","",
+Vehicle.Cabin.Door.Window,"4992","branch","","","","","Door window status","","",""
+Vehicle.Cabin.Door.Window.isOpen.Row1,"4993","sensor","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row2,"4993","sensor","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row3,"4993","sensor","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row4,"4993","sensor","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row1.Left,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row1.Right,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row2.Left,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row2.Right,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row3.Left,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row3.Right,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row4.Left,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.isOpen.Row4.Right,"4993","instance","boolean","","","","Is door open or closed","","","",
+Vehicle.Cabin.Door.Window.Position.Row1,"4994","sensor","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row2,"4994","sensor","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row3,"4994","sensor","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row4,"4994","sensor","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row1.Left,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row1.Right,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row2.Left,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row2.Right,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row3.Left,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row3.Right,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row4.Left,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.Position.Row4.Right,"4994","instance","uint8","percent","0","100","Window position. 0 = Fully closed 100 = Fully opened.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row1,"4995","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row2,"4995","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row3,"4995","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row4,"4995","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row1.Left,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row1.Right,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row2.Left,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row2.Right,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row3.Left,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row3.Right,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row4.Left,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.ChildLock.Row4.Right,"4995","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Window.Switch.Row1,"4996","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row2,"4996","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row3,"4996","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row4,"4996","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row1.Left,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row1.Right,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row2.Left,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row2.Right,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row3.Left,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row3.Right,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row4.Left,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Window.Switch.Row4.Right,"4996","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row1,"4997","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row2,"4997","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row3,"4997","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row4,"4997","sensor","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row1.Left,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row1.Right,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row2.Left,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row2.Right,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row3.Left,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row3.Right,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row4.Left,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.IsChildLockActive.Row4.Right,"4997","instance","boolean","","","","Is door child lock engaged. True = Engaged. False = Disengaged.","","","",
+Vehicle.Cabin.Door.Shade,"4998","branch","","","","","Side window shade","","",""
+Vehicle.Cabin.Door.Shade.Switch.Row1,"4999","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row2,"4999","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row3,"4999","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row4,"4999","actuator","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row1.Left,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row1.Right,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row2.Left,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row2.Right,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row3.Left,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row3.Right,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row4.Left,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Switch.Row4.Right,"4999","instance","string","","","","Switch controlling sliding action such as window, sunroof, or blind.","Inactive / Close / Open / OneShotClose / OneShotOpen","","",
+Vehicle.Cabin.Door.Shade.Position.Row1,"5000","actuator","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row2,"5000","actuator","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row3,"5000","actuator","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row4,"5000","actuator","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row1.Left,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row1.Right,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row2.Left,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row2.Right,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row3.Left,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row3.Right,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row4.Left,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.Door.Shade.Position.Row4.Right,"5000","instance","uint8","percent","0","100","Position of side window blind. 0 = Fully retracted. 100 = Fully deployed.","","","",
+Vehicle.Cabin.DoorCount,"4990","attribute","uint8","","","","Number of doors in vehicle","","","",[]
+Vehicle.Cabin.Seat,"4625","branch","","","","","All seats.","","",""
+Vehicle.Cabin.Seat.HasPassenger.Row1,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row2,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row3,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row4,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row1.Pos1,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row1.Pos2,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row1.Pos3,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row1.Pos4,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row1.Pos5,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row2.Pos1,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row2.Pos2,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row2.Pos3,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row2.Pos4,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row2.Pos5,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row3.Pos1,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row3.Pos2,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row3.Pos3,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row3.Pos4,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row3.Pos5,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row4.Pos1,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row4.Pos2,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row4.Pos3,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row4.Pos4,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.HasPassenger.Row4.Pos5,"5002","sensor","boolean","","","","Does the seat have a passenger in it.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row1,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row2,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row3,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row4,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row1.Pos1,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row1.Pos2,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row1.Pos3,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row1.Pos4,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row1.Pos5,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row2.Pos1,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row2.Pos2,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row2.Pos3,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row2.Pos4,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row2.Pos5,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row3.Pos1,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row3.Pos2,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row3.Pos3,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row3.Pos4,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row3.Pos5,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row4.Pos1,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row4.Pos2,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row4.Pos3,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row4.Pos4,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.IsBelted.Row4.Pos5,"5003","sensor","boolean","","","","Is the belt engaged.","","","",
+Vehicle.Cabin.Seat.Heating.Row1,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row2,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row3,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row4,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row1.Pos1,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row1.Pos2,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row1.Pos3,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row1.Pos4,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row1.Pos5,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row2.Pos1,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row2.Pos2,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row2.Pos3,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row2.Pos4,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row2.Pos5,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row3.Pos1,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row3.Pos2,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row3.Pos3,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row3.Pos4,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row3.Pos5,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row4.Pos1,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row4.Pos2,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row4.Pos3,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row4.Pos4,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Heating.Row4.Pos5,"5004","sensor","int8","percent","-100","100","Seat cooling / heating. 0 = off. -100 = max cold. +100 = max heat","","","",
+Vehicle.Cabin.Seat.Massage.Row1,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row2,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row3,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row4,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row1.Pos1,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row1.Pos2,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row1.Pos3,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row1.Pos4,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row1.Pos5,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row2.Pos1,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row2.Pos2,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row2.Pos3,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row2.Pos4,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row2.Pos5,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row3.Pos1,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row3.Pos2,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row3.Pos3,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row3.Pos4,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row3.Pos5,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row4.Pos1,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row4.Pos2,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row4.Pos3,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row4.Pos4,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Massage.Row4.Pos5,"5005","sensor","uint8","percent","0","100","Seat massage level. 0 = off. 100 = max massage.","","","",
+Vehicle.Cabin.Seat.Recline.Row1,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row2,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row3,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row4,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row1.Pos1,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row1.Pos2,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row1.Pos3,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row1.Pos4,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row1.Pos5,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row2.Pos1,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row2.Pos2,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row2.Pos3,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row2.Pos4,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row2.Pos5,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row3.Pos1,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row3.Pos2,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row3.Pos3,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row3.Pos4,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row3.Pos5,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row4.Pos1,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row4.Pos2,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row4.Pos3,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row4.Pos4,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Recline.Row4.Pos5,"5006","sensor","int8","degrees","-90","90","Recline level. -90 = Max forward recline. 90 max backward recline","","","",
+Vehicle.Cabin.Seat.Position.Row1,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row2,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row3,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row4,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row1.Pos1,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row1.Pos2,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row1.Pos3,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row1.Pos4,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row1.Pos5,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row2.Pos1,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row2.Pos2,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row2.Pos3,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row2.Pos4,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row2.Pos5,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row3.Pos1,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row3.Pos2,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row3.Pos3,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row3.Pos4,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row3.Pos5,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row4.Pos1,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row4.Pos2,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row4.Pos3,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row4.Pos4,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Position.Row4.Pos5,"5007","sensor","uint16","mm","0","1000","Seat horizontal position. 0 = Frontmost. 1000 = Rearmost","","","",
+Vehicle.Cabin.Seat.Cushion,"5008","branch","","","","","Cushion signals.","","",""
+Vehicle.Cabin.Seat.Cushion.Height.Row1,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row2,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row3,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row4,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row1.Pos1,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row1.Pos2,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row1.Pos3,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row1.Pos4,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row1.Pos5,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row2.Pos1,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row2.Pos2,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row2.Pos3,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row2.Pos4,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row2.Pos5,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row3.Pos1,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row3.Pos2,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row3.Pos3,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row3.Pos4,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row3.Pos5,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row4.Pos1,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row4.Pos2,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row4.Pos3,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row4.Pos4,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Height.Row4.Pos5,"5009","sensor","uint16","mm","0","500","Height of the seat front. 0 = Lowermost. 500 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row1,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row2,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row3,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row4,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row1.Pos1,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row1.Pos2,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row1.Pos3,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row1.Pos4,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row1.Pos5,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row2.Pos1,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row2.Pos2,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row2.Pos3,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row2.Pos4,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row2.Pos5,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row3.Pos1,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row3.Pos2,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row3.Pos3,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row3.Pos4,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row3.Pos5,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row4.Pos1,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row4.Pos2,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row4.Pos3,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row4.Pos4,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Cushion.Length.Row4.Pos5,"5010","sensor","uint16","mm","0","500","Forward length of cushion (leg support). 0 = Rearmost. 500 = Forwardmost.","","","",
+Vehicle.Cabin.Seat.Lumbar,"5011","branch","","","","","Lumbar signals","","",""
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row1,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row2,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row3,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row4,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row1.Pos1,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row1.Pos2,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row1.Pos3,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row1.Pos4,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row1.Pos5,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row2.Pos1,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row2.Pos2,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row2.Pos3,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row2.Pos4,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row2.Pos5,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row3.Pos1,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row3.Pos2,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row3.Pos3,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row3.Pos4,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row3.Pos5,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row4.Pos1,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row4.Pos2,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row4.Pos3,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row4.Pos4,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Inflation.Row4.Pos5,"5012","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row1,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row2,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row3,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row4,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row1.Pos1,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row1.Pos2,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row1.Pos3,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row1.Pos4,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row1.Pos5,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row2.Pos1,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row2.Pos2,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row2.Pos3,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row2.Pos4,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row2.Pos5,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row3.Pos1,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row3.Pos2,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row3.Pos3,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row3.Pos4,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row3.Pos5,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row4.Pos1,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row4.Pos2,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row4.Pos3,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row4.Pos4,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.Lumbar.Height.Row4.Pos5,"5013","sensor","uint8","","0","255","Lumbar support position. 0 = Lowermost. 255 = Uppermost.","","","",
+Vehicle.Cabin.Seat.SideBolster,"5014","branch","","","","","Side bolster settings","","",""
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row1,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row2,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row3,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row4,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row1.Pos1,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row1.Pos2,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row1.Pos3,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row1.Pos4,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row1.Pos5,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row2.Pos1,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row2.Pos2,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row2.Pos3,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row2.Pos4,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row2.Pos5,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row3.Pos1,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row3.Pos2,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row3.Pos3,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row3.Pos4,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row3.Pos5,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row4.Pos1,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row4.Pos2,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row4.Pos3,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row4.Pos4,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.SideBolster.Inflation.Row4.Pos5,"5015","sensor","uint8","","0","255","Lumbar support inflation. 0 = Fully deflated. 255 = Fully inflated.","","","",
+Vehicle.Cabin.Seat.HeadRestraint,"5016","branch","","","","","Head restraint settings","","",""
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row1,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row2,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row3,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row4,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row1.Pos1,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row1.Pos2,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row1.Pos3,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row1.Pos4,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row1.Pos5,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row2.Pos1,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row2.Pos2,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row2.Pos3,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row2.Pos4,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row2.Pos5,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row3.Pos1,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row3.Pos2,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row3.Pos3,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row3.Pos4,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row3.Pos5,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row4.Pos1,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row4.Pos2,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row4.Pos3,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row4.Pos4,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.HeadRestraint.Height.Row4.Pos5,"5017","sensor","uint8","mm","0","255","Height of head restraint. 0 = Bottommost. 255 = Topmost.","","","",
+Vehicle.Cabin.Seat.Airbag,"5018","branch","","","","","Airbag signals","","",""
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row1,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row2,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row3,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row4,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row1.Pos1,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row1.Pos2,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row1.Pos3,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row1.Pos4,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row1.Pos5,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row2.Pos1,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row2.Pos2,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row2.Pos3,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row2.Pos4,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row2.Pos5,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row3.Pos1,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row3.Pos2,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row3.Pos3,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row3.Pos4,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row3.Pos5,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row4.Pos1,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row4.Pos2,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row4.Pos3,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row4.Pos4,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Airbag.IsDeployed.Row4.Pos5,"5019","sensor","boolean","","","","Airbag deployment status. True = Airbag deployed. False = Airbag not deployed.","","","",
+Vehicle.Cabin.Seat.Switch,"5020","branch","","","","","Seat switch signals","","",""
+Vehicle.Cabin.Seat.Switch.Warmer.Row1,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row2,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row3,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row4,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row1.Pos1,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row1.Pos2,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row1.Pos3,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row1.Pos4,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row1.Pos5,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row2.Pos1,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row2.Pos2,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row2.Pos3,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row2.Pos4,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row2.Pos5,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row3.Pos1,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row3.Pos2,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row3.Pos3,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row3.Pos4,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row3.Pos5,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row4.Pos1,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row4.Pos2,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row4.Pos3,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row4.Pos4,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Warmer.Row4.Pos5,"5021","actuator","boolean","","","","Warmer switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row1,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row2,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row3,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row4,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row1.Pos1,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row1.Pos2,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row1.Pos3,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row1.Pos4,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row1.Pos5,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row2.Pos1,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row2.Pos2,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row2.Pos3,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row2.Pos4,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row2.Pos5,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row3.Pos1,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row3.Pos2,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row3.Pos3,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row3.Pos4,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row3.Pos5,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row4.Pos1,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row4.Pos2,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row4.Pos3,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row4.Pos4,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Cooler.Row4.Pos5,"5022","actuator","boolean","","","","Cooler switch for Seat heater","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row1,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row2,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row3,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row4,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row1.Pos1,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row1.Pos2,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row1.Pos3,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row1.Pos4,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row1.Pos5,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row2.Pos1,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row2.Pos2,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row2.Pos3,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row2.Pos4,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row2.Pos5,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row3.Pos1,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row3.Pos2,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row3.Pos3,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row3.Pos4,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row3.Pos5,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row4.Pos1,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row4.Pos2,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row4.Pos3,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row4.Pos4,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Forward.Row4.Pos5,"5023","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row1,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row2,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row3,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row4,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row1.Pos1,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row1.Pos2,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row1.Pos3,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row1.Pos4,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row1.Pos5,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row2.Pos1,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row2.Pos2,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row2.Pos3,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row2.Pos4,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row2.Pos5,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row3.Pos1,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row3.Pos2,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row3.Pos3,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row3.Pos4,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row3.Pos5,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row4.Pos1,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row4.Pos2,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row4.Pos3,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row4.Pos4,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Backward.Row4.Pos5,"5024","actuator","boolean","","","","Seat forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row1,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row2,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row3,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row4,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row1.Pos1,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row1.Pos2,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row1.Pos3,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row1.Pos4,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row1.Pos5,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row2.Pos1,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row2.Pos2,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row2.Pos3,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row2.Pos4,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row2.Pos5,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row3.Pos1,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row3.Pos2,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row3.Pos3,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row3.Pos4,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row3.Pos5,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row4.Pos1,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row4.Pos2,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row4.Pos3,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row4.Pos4,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Up.Row4.Pos5,"5025","actuator","boolean","","","","Seat up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row1,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row2,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row3,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row4,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row1.Pos1,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row1.Pos2,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row1.Pos3,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row1.Pos4,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row1.Pos5,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row2.Pos1,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row2.Pos2,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row2.Pos3,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row2.Pos4,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row2.Pos5,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row3.Pos1,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row3.Pos2,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row3.Pos3,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row3.Pos4,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row3.Pos5,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row4.Pos1,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row4.Pos2,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row4.Pos3,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row4.Pos4,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Down.Row4.Pos5,"5026","actuator","boolean","","","","Seat down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint,"5027","branch","","","","","Head restraint switches","","",""
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row1,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row2,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row3,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row4,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row1.Pos1,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row1.Pos2,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row1.Pos3,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row1.Pos4,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row1.Pos5,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row2.Pos1,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row2.Pos2,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row2.Pos3,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row2.Pos4,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row2.Pos5,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row3.Pos1,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row3.Pos2,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row3.Pos3,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row3.Pos4,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row3.Pos5,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row4.Pos1,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row4.Pos2,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row4.Pos3,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row4.Pos4,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Up.Row4.Pos5,"5028","actuator","boolean","","","","Head restraint up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row1,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row2,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row3,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row4,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row1.Pos1,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row1.Pos2,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row1.Pos3,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row1.Pos4,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row1.Pos5,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row2.Pos1,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row2.Pos2,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row2.Pos3,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row2.Pos4,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row2.Pos5,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row3.Pos1,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row3.Pos2,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row3.Pos3,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row3.Pos4,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row3.Pos5,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row4.Pos1,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row4.Pos2,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row4.Pos3,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row4.Pos4,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.HeadRestraint.Down.Row4.Pos5,"5029","actuator","boolean","","","","Head restraint down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage,"5030","branch","","","","","Massage switches","","",""
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row1,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row2,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row3,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row4,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row1.Pos1,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row1.Pos2,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row1.Pos3,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row1.Pos4,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row1.Pos5,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row2.Pos1,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row2.Pos2,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row2.Pos3,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row2.Pos4,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row2.Pos5,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row3.Pos1,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row3.Pos2,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row3.Pos3,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row3.Pos4,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row3.Pos5,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row4.Pos1,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row4.Pos2,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row4.Pos3,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row4.Pos4,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Increase.Row4.Pos5,"5031","actuator","boolean","","","","Increase massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row1,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row2,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row3,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row4,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row1.Pos1,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row1.Pos2,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row1.Pos3,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row1.Pos4,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row1.Pos5,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row2.Pos1,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row2.Pos2,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row2.Pos3,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row2.Pos4,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row2.Pos5,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row3.Pos1,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row3.Pos2,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row3.Pos3,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row3.Pos4,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row3.Pos5,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row4.Pos1,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row4.Pos2,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row4.Pos3,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row4.Pos4,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Massage.Decrease.Row4.Pos5,"5032","actuator","boolean","","","","Decrease massage level switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline,"5033","branch","","","","","Recline switches","","",""
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row1,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row2,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row3,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row4,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row1.Pos1,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row1.Pos2,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row1.Pos3,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row1.Pos4,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row1.Pos5,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row2.Pos1,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row2.Pos2,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row2.Pos3,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row2.Pos4,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row2.Pos5,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row3.Pos1,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row3.Pos2,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row3.Pos3,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row3.Pos4,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row3.Pos5,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row4.Pos1,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row4.Pos2,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row4.Pos3,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row4.Pos4,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Backward.Row4.Pos5,"5034","actuator","boolean","","","","Seatback recline backward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row1,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row2,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row3,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row4,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row1.Pos1,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row1.Pos2,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row1.Pos3,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row1.Pos4,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row1.Pos5,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row2.Pos1,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row2.Pos2,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row2.Pos3,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row2.Pos4,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row2.Pos5,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row3.Pos1,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row3.Pos2,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row3.Pos3,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row3.Pos4,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row3.Pos5,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row4.Pos1,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row4.Pos2,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row4.Pos3,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row4.Pos4,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Recline.Forward.Row4.Pos5,"5035","actuator","boolean","","","","Seatback recline forward switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion,"5036","branch","","","","","Cushion switches","","",""
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row1,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row2,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row3,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row4,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row1.Pos1,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row1.Pos2,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row1.Pos3,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row1.Pos4,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row1.Pos5,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row2.Pos1,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row2.Pos2,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row2.Pos3,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row2.Pos4,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row2.Pos5,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row3.Pos1,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row3.Pos2,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row3.Pos3,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row3.Pos4,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row3.Pos5,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row4.Pos1,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row4.Pos2,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row4.Pos3,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row4.Pos4,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Up.Row4.Pos5,"5037","actuator","boolean","","","","Seat cushion up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row1,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row2,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row3,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row4,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row1.Pos1,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row1.Pos2,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row1.Pos3,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row1.Pos4,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row1.Pos5,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row2.Pos1,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row2.Pos2,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row2.Pos3,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row2.Pos4,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row2.Pos5,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row3.Pos1,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row3.Pos2,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row3.Pos3,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row3.Pos4,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row3.Pos5,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row4.Pos1,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row4.Pos2,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row4.Pos3,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row4.Pos4,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Down.Row4.Pos5,"5038","actuator","boolean","","","","Seat cushion down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row1,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row2,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row3,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row4,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row1.Pos1,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row1.Pos2,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row1.Pos3,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row1.Pos4,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row1.Pos5,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row2.Pos1,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row2.Pos2,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row2.Pos3,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row2.Pos4,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row2.Pos5,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row3.Pos1,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row3.Pos2,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row3.Pos3,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row3.Pos4,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row3.Pos5,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row4.Pos1,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row4.Pos2,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row4.Pos3,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row4.Pos4,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Forward.Row4.Pos5,"5039","actuator","boolean","","","","Seat cushion forward/lengthen switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row1,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row2,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row3,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row4,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row1.Pos1,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row1.Pos2,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row1.Pos3,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row1.Pos4,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row1.Pos5,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row2.Pos1,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row2.Pos2,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row2.Pos3,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row2.Pos4,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row2.Pos5,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row3.Pos1,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row3.Pos2,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row3.Pos3,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row3.Pos4,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row3.Pos5,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row4.Pos1,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row4.Pos2,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row4.Pos3,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row4.Pos4,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Cushion.Backward.Row4.Pos5,"5040","actuator","boolean","","","","Seat cushion backward/shorten switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar,"5041","branch","","","","","Lumbar switches","","",""
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row1,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row2,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row3,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row4,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row1.Pos1,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row1.Pos2,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row1.Pos3,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row1.Pos4,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row1.Pos5,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row2.Pos1,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row2.Pos2,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row2.Pos3,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row2.Pos4,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row2.Pos5,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row3.Pos1,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row3.Pos2,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row3.Pos3,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row3.Pos4,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row3.Pos5,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row4.Pos1,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row4.Pos2,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row4.Pos3,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row4.Pos4,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Up.Row4.Pos5,"5042","actuator","boolean","","","","Lumbar up switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row1,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row2,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row3,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row4,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row1.Pos1,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row1.Pos2,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row1.Pos3,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row1.Pos4,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row1.Pos5,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row2.Pos1,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row2.Pos2,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row2.Pos3,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row2.Pos4,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row2.Pos5,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row3.Pos1,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row3.Pos2,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row3.Pos3,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row3.Pos4,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row3.Pos5,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row4.Pos1,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row4.Pos2,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row4.Pos3,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row4.Pos4,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Down.Row4.Pos5,"5043","actuator","boolean","","","","Lumbar down switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row1,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row2,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row3,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row4,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row1.Pos1,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row1.Pos2,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row1.Pos3,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row1.Pos4,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row1.Pos5,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row2.Pos1,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row2.Pos2,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row2.Pos3,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row2.Pos4,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row2.Pos5,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row3.Pos1,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row3.Pos2,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row3.Pos3,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row3.Pos4,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row3.Pos5,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row4.Pos1,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row4.Pos2,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row4.Pos3,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row4.Pos4,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Inflate.Row4.Pos5,"5044","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row1,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row2,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row3,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row4,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row1.Pos1,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row1.Pos2,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row1.Pos3,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row1.Pos4,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row1.Pos5,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row2.Pos1,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row2.Pos2,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row2.Pos3,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row2.Pos4,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row2.Pos5,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row3.Pos1,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row3.Pos2,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row3.Pos3,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row3.Pos4,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row3.Pos5,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row4.Pos1,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row4.Pos2,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row4.Pos3,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row4.Pos4,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.Lumbar.Deflate.Row4.Pos5,"5045","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster,"5046","branch","","","","","Side bolster switches","","",""
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row1,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row2,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row3,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row4,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row1.Pos1,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row1.Pos2,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row1.Pos3,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row1.Pos4,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row1.Pos5,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row2.Pos1,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row2.Pos2,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row2.Pos3,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row2.Pos4,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row2.Pos5,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row3.Pos1,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row3.Pos2,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row3.Pos3,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row3.Pos4,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row3.Pos5,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row4.Pos1,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row4.Pos2,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row4.Pos3,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row4.Pos4,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Inflate.Row4.Pos5,"5047","actuator","boolean","","","","Lumbar inflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row1,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row2,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row3,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row4,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row1.Pos1,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row1.Pos2,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row1.Pos3,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row1.Pos4,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row1.Pos5,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row2.Pos1,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row2.Pos2,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row2.Pos3,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row2.Pos4,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row2.Pos5,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row3.Pos1,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row3.Pos2,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row3.Pos3,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row3.Pos4,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row3.Pos5,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row4.Pos1,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row4.Pos2,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row4.Pos3,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row4.Pos4,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.Seat.Switch.SideBolster.Deflate.Row4.Pos5,"5048","actuator","boolean","","","","Lumbar deflation switch engaged","","","",
+Vehicle.Cabin.DriverPosition,"5000","attribute","uint8","","","","The position of the driver seat in row 1. (1-5)","","","",[]
+Vehicle.Cabin.SeatRowCount,"5001","attribute","uint8","","","","Number of seat rows in vehicle","","","",[]
+Vehicle.Cabin.SeatPosCount.Row1,"5002","attribute","uint8","","","","Number of seats across each row from the front to the rear","","","",
+Vehicle.Cabin.SeatPosCount.Row2,"5002","attribute","uint8","","","","Number of seats across each row from the front to the rear","","","",
+Vehicle.Cabin.SeatPosCount.Row3,"5002","attribute","uint8","","","","Number of seats across each row from the front to the rear","","","",
+Vehicle.Cabin.SeatPosCount.Row4,"5002","attribute","uint8","","","","Number of seats across each row from the front to the rear","","","",
+Vehicle.Cabin.Convertible,"4890","branch","","","","","Convertible roof","","",""
+Vehicle.Cabin.Convertible.Status,"4354","sensor","string","","","","Roof status on convertible vehicles","undefined / closed / open / closing / opening / stalled","","",[]
+Vehicle.Cabin.SteeringWheel,"4891","branch","","","","","Steering wheel configuration attributes","","",""
+Vehicle.Cabin.SteeringWheel.Position,"4355","attribute","string","","","","Position of the steering wheel inside the cabin","front_left / front_right","","",[]
+Vehicle.ADAS,"4892","branch","","","","","All Advanced Driver Assist Systems data.","","",""
+Vehicle.ADAS.CruiseControl,"4893","branch","","","","","Signals from Cruise Control system","","",""
+Vehicle.ADAS.CruiseControl.IsActive,"4356","actuator","boolean","","","","Indicates if cruise control system is enabled. True = Enabled. False = Disabled.","","","",[]
+Vehicle.ADAS.CruiseControl.SpeedSet,"4357","actuator","int32","km/h","","","Set cruise control speed in kilometers per hour","","","",[]
+Vehicle.ADAS.CruiseControl.Error,"4358","sensor","boolean","","","","Indicates if cruise control system incurred and error condition. True = Error. False = NoError.","","","",[]
+Vehicle.ADAS.LaneDepartureDetection,"4894","branch","","","","","Signals from Land Departure Detection System","","",""
+Vehicle.ADAS.LaneDepartureDetection.IsActive,"4359","actuator","boolean","","","","Indicates if lane departure detection system is enabled. True = Enabled. False = Disabled.","","","",[]
+Vehicle.ADAS.LaneDepartureDetection.Warning,"4360","sensor","boolean","","","","Indicates if lane departure detection registered a lane departure","","","",[]
+Vehicle.ADAS.LaneDepartureDetection.Error,"4361","sensor","boolean","","","","Indicates if lane departure system incurred an error condition. True = Error. False = No Error.","","","",[]
+Vehicle.ADAS.ObstacleDetection,"4895","branch","","","","","Signals form Obstacle Sensor System","","",""
+Vehicle.ADAS.ObstacleDetection.IsActive,"4362","actuator","boolean","","","","Indicates if obstacle sensor system is enabled. True = Enabled. False = Disabled.","","","",[]
+Vehicle.ADAS.ObstacleDetection.Error,"4363","sensor","boolean","","","","Indicates if obstacle sensor system incurred an error condition. True = Error. False = No Error.","","","",[]
+Vehicle.ADAS.ObstacleDetection.Input,"5048","branch","","","","","Direct sensor input on obstacle detection","","",""
+Vehicle.ADAS.ObstacleDetection.Input.DistanceToObject.Front,"5049","instance","uint16","m","","","Distance to object in meters","","","",
+Vehicle.ADAS.ObstacleDetection.Input.DistanceToObject.Rear,"5049","instance","uint16","m","","","Distance to object in meters","","","",
+Vehicle.ADAS.ObstacleDetection.Input.DistanceToObject.Front.Left,"5049","instance","uint16","m","","","Distance to object in meters","","","",
+Vehicle.ADAS.ObstacleDetection.Input.DistanceToObject.Front.Right,"5049","instance","uint16","m","","","Distance to object in meters","","","",
+Vehicle.ADAS.ObstacleDetection.Input.DistanceToObject.Rear.Left,"5049","instance","uint16","m","","","Distance to object in meters","","","",
+Vehicle.ADAS.ObstacleDetection.Input.DistanceToObject.Rear.Right,"5049","instance","uint16","m","","","Distance to object in meters","","","",
+Vehicle.ADAS.ABS,"4897","branch","","","","","Antilock Braking System signals","","",""
+Vehicle.ADAS.ABS.IsActive,"4368","actuator","boolean","","","","Indicates if ABS is enabled. True = Enabled. False = Disabled.","","","",[]
+Vehicle.ADAS.ABS.Error,"4369","sensor","boolean","","","","Indicates if ABS incurred an error condition. True = Error. False = No Error.","","","",[]
+Vehicle.ADAS.ABS.IsEngaged,"4370","sensor","boolean","","","","Indicates if ABS is currently regulating brake pressure. True = Engaged. False = Not Engaged.","","","",[]
+Vehicle.ADAS.TCS,"4898","branch","","","","","Traction Control System signals","","",""
+Vehicle.ADAS.TCS.IsActive,"4371","actuator","boolean","","","","Indicates if TCS is enabled. True = Enabled. False = Disabled.","","","",[]
+Vehicle.ADAS.TCS.Error,"4372","sensor","boolean","","","","Indicates if TCS incurred an error condition. True = Error. False = No Error.","","","",[]
+Vehicle.ADAS.TCS.IsEngaged,"4373","sensor","boolean","","","","Indicates if TCS is currently regulating traction. True = Engaged. False = Not Engaged.","","","",[]
+Vehicle.ADAS.ESC,"4899","branch","","","","","Electronic Stability Control System signals","","",""
+Vehicle.ADAS.ESC.IsActive,"4374","actuator","boolean","","","","Indicates if ECS is enabled. True = Enabled. False = Disabled.","","","",[]
+Vehicle.ADAS.ESC.Error,"4375","sensor","boolean","","","","Indicates if ESC incurred an error condition. True = Error. False = No Error.","","","",[]
+Vehicle.ADAS.ESC.IsEngaged,"4376","sensor","boolean","","","","Indicates if ESC is currently regulating vehicle stability. True = Engaged. False = Not Engaged.","","","",[]
+Vehicle.Chassis,"4900","branch","","","","","All data concerning steering, suspension, wheels, and brakes.","","",""
+Vehicle.Chassis.CurbWeight,"4377","attribute","uint16","kg","","","Vehicle curb weight, in kg, including all liquids and full tank of fuel, but no cargo or passengers.","","","",[]
+Vehicle.Chassis.GrossWeight,"4378","attribute","uint16","kg","","","Curb weight of vehicle, including all liquids and full tank of fuel and full load of cargo and passengers.","","","",[]
+Vehicle.Chassis.TowWeight,"4379","attribute","uint16","kg","","","Maximum weight, in kilos, of trailer.","","","",[]
+Vehicle.Chassis.Length,"4380","attribute","uint16","mm","","","Overall vehicle length, in mm.","","","",[]
+Vehicle.Chassis.Height,"4381","attribute","uint16","mm","","","Overall vehicle height, in mm.","","","",[]
+Vehicle.Chassis.Width,"4382","attribute","uint16","mm","","","Overall vehicle width, in mm.","","","",[]
+Vehicle.Chassis.Wheelbase,"4383","attribute","uint16","mm","","","Overall wheel base, in mm.","","","",[]
+Vehicle.Chassis.Track,"4384","attribute","uint16","mm","","","Overall wheel tracking, in mm.","","","",[]
+Vehicle.Chassis.Axle,"4901","branch","","","","","Axle signals","","",""
+Vehicle.Chassis.Axle.WheelCount.Row1,"5050","attribute","uint8","","","","Number of wheels on the first axle","","","",
+Vehicle.Chassis.Axle.WheelCount.Row2,"5050","attribute","uint8","","","","Number of wheels on the first axle","","","",
+Vehicle.Chassis.Axle.WheelDiameter.Row1,"5051","attribute","uint8","inch","","","Diameter of wheels (without tires), in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.WheelDiameter.Row2,"5051","attribute","uint8","inch","","","Diameter of wheels (without tires), in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.WheelWidth.Row1,"5052","attribute","uint8","inch","","","Width of wheels (without tires), in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.WheelWidth.Row2,"5052","attribute","uint8","inch","","","Width of wheels (without tires), in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.TireDiameter.Row1,"5053","attribute","uint8","inch","","","Diameter of tires, in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.TireDiameter.Row2,"5053","attribute","uint8","inch","","","Diameter of tires, in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.TireWidth.Row1,"5054","attribute","uint8","inch","","","Width of tires, in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.TireWidth.Row2,"5054","attribute","uint8","inch","","","Width of tires, in inches, as per ETRO / TRA standard.","","","",
+Vehicle.Chassis.Axle.Wheel,"5055","branch","","","","","Brake signals for first row","","",""
+Vehicle.Chassis.Axle.Wheel.Brake,"5056","branch","","","","","Brake signals for wheel","","",""
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevel.Left.Row1,"5057","sensor","uint8","percent","","","Brake fluid level as percent. 0 = Empty. 100 = Full.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevel.Left.Row2,"5057","sensor","uint8","percent","","","Brake fluid level as percent. 0 = Empty. 100 = Full.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevel.Right.Row1,"5057","sensor","uint8","percent","","","Brake fluid level as percent. 0 = Empty. 100 = Full.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevel.Right.Row2,"5057","sensor","uint8","percent","","","Brake fluid level as percent. 0 = Empty. 100 = Full.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevelLow.Left.Row1,"5058","sensor","boolean","","","","Brake fluid level status. True = Brake fluid level low. False = Brake fluid level OK.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevelLow.Left.Row2,"5058","sensor","boolean","","","","Brake fluid level status. True = Brake fluid level low. False = Brake fluid level OK.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevelLow.Right.Row1,"5058","sensor","boolean","","","","Brake fluid level status. True = Brake fluid level low. False = Brake fluid level OK.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.FluidLevelLow.Right.Row2,"5058","sensor","boolean","","","","Brake fluid level status. True = Brake fluid level low. False = Brake fluid level OK.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.PadWear.Left.Row1,"5059","sensor","uint8","","","","Brake pad wear as percent. 0 = No Wear. 100 = Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.PadWear.Left.Row2,"5059","sensor","uint8","","","","Brake pad wear as percent. 0 = No Wear. 100 = Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.PadWear.Right.Row1,"5059","sensor","uint8","","","","Brake pad wear as percent. 0 = No Wear. 100 = Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.PadWear.Right.Row2,"5059","sensor","uint8","","","","Brake pad wear as percent. 0 = No Wear. 100 = Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.BrakesWorn.Left.Row1,"5060","sensor","boolean","","","","Brake pad wear status. True = Worn. False = Not Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.BrakesWorn.Left.Row2,"5060","sensor","boolean","","","","Brake pad wear status. True = Worn. False = Not Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.BrakesWorn.Right.Row1,"5060","sensor","boolean","","","","Brake pad wear status. True = Worn. False = Not Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Brake.BrakesWorn.Right.Row2,"5060","sensor","boolean","","","","Brake pad wear status. True = Worn. False = Not Worn.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire,"5061","branch","","","","","Tire signals for wheel","","",""
+Vehicle.Chassis.Axle.Wheel.Tire.Pressure.Left.Row1,"5062","sensor","uint8","kpa","","","Tire pressure in kilo-Pascal","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.Pressure.Left.Row2,"5062","sensor","uint8","kpa","","","Tire pressure in kilo-Pascal","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.Pressure.Right.Row1,"5062","sensor","uint8","kpa","","","Tire pressure in kilo-Pascal","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.Pressure.Right.Row2,"5062","sensor","uint8","kpa","","","Tire pressure in kilo-Pascal","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.PressureLow.Left.Row1,"5063","sensor","boolean","","","","Tire Pressure Status. True = Low tire pressure. False = Good tire pressure.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.PressureLow.Left.Row2,"5063","sensor","boolean","","","","Tire Pressure Status. True = Low tire pressure. False = Good tire pressure.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.PressureLow.Right.Row1,"5063","sensor","boolean","","","","Tire Pressure Status. True = Low tire pressure. False = Good tire pressure.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.PressureLow.Right.Row2,"5063","sensor","boolean","","","","Tire Pressure Status. True = Low tire pressure. False = Good tire pressure.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.Temperature.Left.Row1,"5064","sensor","float","celsius","","","Tire temperature in Celsius.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.Temperature.Left.Row2,"5064","sensor","float","celsius","","","Tire temperature in Celsius.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.Temperature.Right.Row1,"5064","sensor","float","celsius","","","Tire temperature in Celsius.","","","",
+Vehicle.Chassis.Axle.Wheel.Tire.Temperature.Right.Row2,"5064","sensor","float","celsius","","","Tire temperature in Celsius.","","","",
+Vehicle.Chassis.AxleCount,"5049","attribute","uint8","","","","Number of axles on the vehicle","","","",[]
+Vehicle.Chassis.ParkingBrake,"4918","branch","","","","","Parking brake signals","","",""
+Vehicle.Chassis.ParkingBrake.IsEngaged,"4423","actuator","boolean","","","","Parking brake status. True = Parking Brake is Engaged. False = Parking Brake is not Engaged.","","","",[]
+Vehicle.Chassis.SteeringWheel,"4919","branch","","","","","Steering wheel signals","","",""
+Vehicle.Chassis.SteeringWheel.Angle,"4424","sensor","Int16","degrees","","","Steering wheel angle. Positive = degrees to the left. Negative = degrees to the right.","","","",[]
+Vehicle.Chassis.SteeringWheel.Tilt,"4425","actuator","uint8","percent","0","100","Steering wheel column tilt. 0 = Lowest position. 100 = Highest position.","","","",[]
+Vehicle.Chassis.SteeringWheel.Extension,"4426","actuator","uint8","percent","0","100","Steering wheel column extension from dashboard. 0 = Closest to dashboard. 100 = Furthest from dashboard.","","","",[]
+Vehicle.Chassis.Accelerator,"4920","branch","","","","","Accelerator signals","","",""
+Vehicle.Chassis.Accelerator.PedalPosition,"4427","sensor","uint8","percent","0","100","Accelerator pedal position as percent. 0 = Not depressed. 100 = Fully depressed.","","","",[]
+Vehicle.Chassis.Brake,"4921","branch","","","","","Brake system signals","","",""
+Vehicle.Chassis.Brake.PedalPosition,"4428","sensor","uint8","percent","0","100","Brake pedal position as percent. 0 = Not depressed. 100 = Fully depressed.","","","",[]
+Vehicle.Chassis.Trailer,"4922","branch","","","","","Trailer signals","","",""
+Vehicle.Chassis.Trailer.Connected,"4429","sensor","boolean","","","","Signal indicating if trailer is connected or not.","","","",[]
+Vehicle.OBD,"4923","branch","","","","","OBD data.","","",""
+Vehicle.OBD.PidsA,"4430","sensor","uint32","","","","PID 00 - Bit array of the supported pids 01 to 20","","","",[]
+Vehicle.OBD.Status,"4924","branch","","","","","PID 01 - OBD status","","",""
+Vehicle.OBD.Status.MIL,"4431","sensor","boolean","","","","Malfunction Indicator Light (MIL) False = Off, True = On","","","",[]
+Vehicle.OBD.Status.DTCCount,"4432","sensor","uint32","","","","Number of sensor Trouble Codes (DTC)","","","",[]
+Vehicle.OBD.Status.IgnitionType,"4433","sensor","string","","","","Type of the ignition for ICE - spark = spark plug ignition, compression = self-igniting (Diesel engines)","spark / compression","","",[]
+Vehicle.OBD.FreezeDTC,"4434","sensor","string","","","","PID 02 - DTC that triggered the freeze frame","","","",[]
+Vehicle.OBD.FuelStatus,"4435","sensor","string","","","","PID 03 - Fuel status","","","",[]
+Vehicle.OBD.EngineLoad,"4436","sensor","uint8","percent","0","100","PID 04 - Engine load in percent - 0 = no load, 100 = full load","","","",[]
+Vehicle.OBD.CoolantTemperature,"4437","sensor","float","celsius","","","PID 05 - Coolant temperature","","","",[]
+Vehicle.OBD.ShortTermFuelTrim1,"4438","sensor","int8","percent","-100","100","PID 06 - Short Term (immediate) Fuel Trim - Bank 1 - negative percent leaner, positive percent richer","","","",[]
+Vehicle.OBD.LongTermFuelTrim1,"4439","sensor","int8","percent","-100","100","PID 07 - Long Term (learned) Fuel Trim - Bank 1 - negative percent leaner, positive percent richer","","","",[]
+Vehicle.OBD.ShortTermFuelTrim2,"4440","sensor","int8","percent","-100","100","PID 08 - Short Term (immediate) Fuel Trim - Bank 2 - negative percent leaner, positive percent richer","","","",[]
+Vehicle.OBD.LongTermFuelTrim2,"4441","sensor","int8","percent","-100","100","PID 09 - Long Term (learned) Fuel Trim - Bank 2 - negative percent leaner, positive percent richer","","","",[]
+Vehicle.OBD.FuelPressure,"4442","sensor","float","kpa","0","","PID 0A - Fuel pressure","","","",[]
+Vehicle.OBD.MAP,"4443","sensor","float","kpa","0","","PID 0B - Intake manifold pressure","","","",[]
+Vehicle.OBD.EngineSpeed,"4444","sensor","float","rpm","","","PID 0C - Engine speed measured as rotations per minute","","","",[]
+Vehicle.OBD.Speed,"4445","sensor","float","km/h","","","PID 0D - Vehicle speed","","","",[]
+Vehicle.OBD.TimingAdvance,"4446","sensor","float","degrees","","","PID 0E - Time advance","","","",[]
+Vehicle.OBD.IntakeTemp,"4447","sensor","float","celsius","","","PID 0F - Intake temperature","","","",[]
+Vehicle.OBD.MAF,"4448","sensor","int16","g/s","","","PID 10 - Grams of air drawn into engine per second","","","",[]
+Vehicle.OBD.ThrottlePosition,"4449","sensor","uint8","percent","0","100","PID 11 - Throttle position - 0 = closed throttle, 100 = open throttle","","","",[]
+Vehicle.OBD.AirStatus,"4450","sensor","string","","","","PID 12 - Secondary air status","","","",[]
+Vehicle.OBD.O2,"4925","branch","","","","","PID 13 - Presence of oxygen sensors for the banks","","",""
+Vehicle.OBD.O2.Bank1,"4926","branch","","","","","Oxygen sensors on bank 1, at most 4 sensors per bank","","",""
+Vehicle.OBD.O2.Bank1.Sensor1,"4927","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank1.Sensor1.Voltage,"4451","sensor","float","V","","","PID 14 - Sensor voltage","","","",[]
+Vehicle.OBD.O2.Bank1.Sensor2,"4928","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank1.Sensor2.Voltage,"4452","sensor","float","V","","","PID 15 - Sensor voltage","","","",[]
+Vehicle.OBD.O2.Bank1.Sensor3,"4929","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank1.Sensor3.Voltage,"4453","sensor","float","V","","","PID 16 - Sensor voltage","","","",[]
+Vehicle.OBD.O2.Bank1.Sensor4,"4930","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank1.Sensor4.Voltage,"4454","sensor","float","V","","","PID 17 - Sensor voltage","","","",[]
+Vehicle.OBD.O2.Bank2,"4931","branch","","","","","Oxygen sensors on bank 2, at most 4 sensors per bank","","",""
+Vehicle.OBD.O2.Bank2.Sensor1,"4932","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank2.Sensor1.Voltage,"4455","sensor","float","V","","","PID 18 - Sensor voltage","","","",[]
+Vehicle.OBD.O2.Bank2.Sensor2,"4933","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank2.Sensor2.Voltage,"4456","sensor","float","V","","","PID 19 - Sensor voltage","","","",[]
+Vehicle.OBD.O2.Bank2.Sensor3,"4934","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank2.Sensor3.Voltage,"4457","sensor","float","V","","","PID 1A - Sensor voltage","","","",[]
+Vehicle.OBD.O2.Bank2.Sensor4,"4935","branch","","","","","Oxygen sensor","","",""
+Vehicle.OBD.O2.Bank2.Sensor4.Voltage,"4458","sensor","float","V","","","PID 1B - Sensor voltage","","","",[]
+Vehicle.OBD.O2Alt,"4936","branch","","","","","PID 1D - Presence of alternate oxygen sensors for the banks","","",""
+Vehicle.OBD.O2Alt.Bank1,"4937","branch","","","","","Alternate oxygen sensors on bank 1, at most 4 sensors per bank","","",""
+Vehicle.OBD.O2Alt.Bank1.Sensor1,"4938","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.O2Alt.Bank1.Sensor2,"4939","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.O2Alt.Bank1.Sensor3,"4940","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.O2Alt.Bank1.Sensor4,"4941","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.O2Alt.Bank2,"4942","branch","","","","","Alternate oxygen sensors on bank 2, at most 4 sensors per bank","","",""
+Vehicle.OBD.O2Alt.Bank2.Sensor1,"4943","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.O2Alt.Bank2.Sensor2,"4944","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.O2Alt.Bank2.Sensor3,"4945","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.O2Alt.Bank2.Sensor4,"4946","branch","","","","","Alternate oxygen sensor","","",""
+Vehicle.OBD.AuxInputStatus,"4459","sensor","boolean","","","","PID 1E - Auxiliary input status (power take off)","","","",[]
+Vehicle.OBD.RunTime,"4460","sensor","uint32","s","","","PID 1F - Engine run time","","","",[]
+Vehicle.OBD.PidsB,"4461","sensor","uint32","","","","PID 20 - Bit array of the supported pids 21 to 40","","","",[]
+Vehicle.OBD.DistanceWithMIL,"4462","sensor","uint32","kilometer","","","PID 21 - Distance traveled with MIL on","","","",[]
+Vehicle.OBD.FuelRailPressureVac,"4463","sensor","float","kpa","","","PID 22 - Fuel rail pressure relative to vacuum","","","",[]
+Vehicle.OBD.FuelRailPressureDirect,"4464","sensor","float","kpa","","","PID 23 - Fuel rail pressure direct inject","","","",[]
+Vehicle.OBD.O2WR,"4947","branch","","","","","Wide range/band oxygen sensors","","",""
+Vehicle.OBD.O2WR.Sensor1,"4948","branch","","","","","Wide range/band oxygen senor 1","","",""
+Vehicle.OBD.O2WR.Sensor1.Voltage,"4465","sensor","float","V","","","PID 24 - Lambda voltage for wide range/band oxygen sensor 1","","","",[]
+Vehicle.OBD.O2WR.Sensor1.Current,"4466","sensor","float","A","","","PID 34 - Lambda current for wide range/band oxygen sensor 1","","","",[]
+Vehicle.OBD.O2WR.Sensor2,"4949","branch","","","","","Wide range/band oxygen senor 2","","",""
+Vehicle.OBD.O2WR.Sensor2.Voltage,"4467","sensor","float","V","","","PID 25 - Lambda voltage for wide range/band oxygen sensor 2","","","",[]
+Vehicle.OBD.O2WR.Sensor2.Current,"4468","sensor","float","A","","","PID 35 - Lambda current for wide range/band oxygen sensor 2","","","",[]
+Vehicle.OBD.O2WR.Sensor3,"4950","branch","","","","","Wide range/band oxygen senor 3","","",""
+Vehicle.OBD.O2WR.Sensor3.Voltage,"4469","sensor","float","V","","","PID 26 - Lambda voltage for wide range/band oxygen sensor 3","","","",[]
+Vehicle.OBD.O2WR.Sensor3.Current,"4470","sensor","float","A","","","PID 36 - Lambda current for wide range/band oxygen sensor 4","","","",[]
+Vehicle.OBD.O2WR.Sensor4,"4951","branch","","","","","Wide range/band oxygen senor 4","","",""
+Vehicle.OBD.O2WR.Sensor4.Voltage,"4471","sensor","float","V","","","PID 27 - Lambda voltage for wide range/band oxygen sensor 4","","","",[]
+Vehicle.OBD.O2WR.Sensor4.Current,"4472","sensor","float","A","","","PID 37 - Lambda current for wide range/band oxygen sensor 4","","","",[]
+Vehicle.OBD.O2WR.Sensor5,"4952","branch","","","","","Wide range/band oxygen senor 5","","",""
+Vehicle.OBD.O2WR.Sensor5.Voltage,"4473","sensor","float","V","","","PID 28 - Lambda voltage for wide range/band oxygen sensor 5","","","",[]
+Vehicle.OBD.O2WR.Sensor5.Current,"4474","sensor","float","A","","","PID 38 - Lambda current for wide range/band oxygen sensor 5","","","",[]
+Vehicle.OBD.O2WR.Sensor6,"4953","branch","","","","","Wide range/band oxygen senor 6","","",""
+Vehicle.OBD.O2WR.Sensor6.Voltage,"4475","sensor","float","V","","","PID 29 - Lambda voltage for wide range/band oxygen sensor 6","","","",[]
+Vehicle.OBD.O2WR.Sensor6.Current,"4476","sensor","float","A","","","PID 39 - Lambda current for wide range/band oxygen sensor 6","","","",[]
+Vehicle.OBD.O2WR.Sensor7,"4954","branch","","","","","Wide range/band oxygen senor 7","","",""
+Vehicle.OBD.O2WR.Sensor7.Voltage,"4477","sensor","float","V","","","PID 2A - Lambda voltage for wide range/band oxygen sensor 7","","","",[]
+Vehicle.OBD.O2WR.Sensor7.Current,"4478","sensor","float","A","","","PID 3A - Lambda current for wide range/band oxygen sensor 7","","","",[]
+Vehicle.OBD.O2WR.Sensor8,"4955","branch","","","","","Wide range/band oxygen senor 8","","",""
+Vehicle.OBD.O2WR.Sensor8.Voltage,"4479","sensor","float","V","","","PID 2B - Lambda voltage for wide range/band oxygen sensor 8","","","",[]
+Vehicle.OBD.O2WR.Sensor8.Current,"4480","sensor","float","A","","","PID 3B - Lambda current for wide range/band oxygen sensor 8","","","",[]
+Vehicle.OBD.CommandedEGR,"4481","sensor","uint8","percent","","","PID 2C - Commanded exhaust gas recirculation (EGR)","","","",[]
+Vehicle.OBD.EGRError,"4482","sensor","uint8","percent","","","PID 2D - Exhaust gas recirculation (EGR) error","","","",[]
+Vehicle.OBD.CommandedEVAP,"4483","sensor","uint8","percent","","","PID 2E - Commanded evaporative purge (EVAP) valve","","","",[]
+Vehicle.OBD.FuelLevel,"4484","sensor","uint8","percent","","","PID 2F - Fuel level in the fuel tank","","","",[]
+Vehicle.OBD.WarmupsSinceDTCClear,"4485","sensor","uint16","","","","PID 30 - Number of warm-ups since codes cleared","","","",[]
+Vehicle.OBD.DistanceSinceDTCClear,"4486","sensor","float","km","","","PID 31 - Distance traveled since codes cleared","","","",[]
+Vehicle.OBD.EVAPVaporPressure,"4487","sensor","float","pa","","","PID 32 - Evaporative purge (EVAP) system pressure","","","",[]
+Vehicle.OBD.BarometricPressure,"4488","sensor","float","kpa","","","PID 33 - Barometric pressure","","","",[]
+Vehicle.OBD.Catalyst,"4956","branch","","","","","Catalyst signals","","",""
+Vehicle.OBD.Catalyst.Bank1,"4957","branch","","","","","Catalyst bank 1 signals","","",""
+Vehicle.OBD.Catalyst.Bank1.Temperature1,"4489","sensor","float","celsius","","","PID 3C - Catalyst temperature from bank 1, sensor 1","","","",[]
+Vehicle.OBD.Catalyst.Bank1.Temperature2,"4490","sensor","float","celsius","","","PID 3E - Catalyst temperature from bank 1, sensor 2","","","",[]
+Vehicle.OBD.Catalyst.Bank2,"4958","branch","","","","","Catalyst bank 2 signals","","",""
+Vehicle.OBD.Catalyst.Bank2.Temperature1,"4491","sensor","float","celsius","","","PID 3D - Catalyst temperature from bank 2, sensor 1","","","",[]
+Vehicle.OBD.Catalyst.Bank2.Temperature2,"4492","sensor","float","celsius","","","PID 3F - Catalyst temperature from bank 2, sensor 2","","","",[]
+Vehicle.OBD.PidsC,"4493","sensor","uint32","","","","PID 40 - Bit array of the supported pids 41 to 60","","","",[]
+Vehicle.OBD.DriveCycleStatus,"4959","branch","","","","","PID 41 - OBD status for the current drive cycle","","",""
+Vehicle.OBD.DriveCycleStatus.MIL,"4494","sensor","boolean","","","","Malfunction Indicator Light (MIL) - False = Off, True = On","","","",[]
+Vehicle.OBD.DriveCycleStatus.DTCCount,"4495","sensor","uint32","","","","Number of sensor Trouble Codes (DTC)","","","",[]
+Vehicle.OBD.DriveCycleStatus.IgnitionType,"4496","sensor","string","","","","Type of the ignition for ICE - spark = spark plug ignition, compression = self-igniting (Diesel engines)","spark / compression","","",[]
+Vehicle.OBD.ControlModuleVoltage,"4497","sensor","float","V","","","PID 42 - Control module voltage","","","",[]
+Vehicle.OBD.AbsoluteLoad,"4498","sensor","uint8","percent","","","PID 43 - Absolute load value","","","",[]
+Vehicle.OBD.CommandedEquivalenceRatio,"4499","sensor","float","ratio","","","PID 44 - Commanded equivalence ratio","","","",[]
+Vehicle.OBD.RelativeThrottlePosition,"4500","sensor","uint8","percent","","","PID 45 - Relative throttle position","","","",[]
+Vehicle.OBD.AmbientAirTemperature,"4501","sensor","float","celsius","","","PID 46 - Ambient air temperature","","","",[]
+Vehicle.OBD.ThrottlePositionB,"4502","sensor","uint8","percent","","","PID 47 - Absolute throttle position B","","","",[]
+Vehicle.OBD.ThrottlePositionC,"4503","sensor","uint8","percent","","","PID 48 - Absolute throttle position C","","","",[]
+Vehicle.OBD.AcceleratorPositionD,"4504","sensor","uint8","percent","","","PID 49 - Accelerator pedal position D","","","",[]
+Vehicle.OBD.AcceleratorPositionE,"4505","sensor","uint8","percent","","","PID 4A - Accelerator pedal position E","","","",[]
+Vehicle.OBD.AcceleratorPositionF,"4506","sensor","uint8","percent","","","PID 4B - Accelerator pedal position F","","","",[]
+Vehicle.OBD.ThrottleActuator,"4507","sensor","uint8","percent","","","PID 4C - Commanded throttle actuator","","","",[]
+Vehicle.OBD.RunTimeMIL,"4508","sensor","uint32","min","","","PID 4D - Run time with MIL on","","","",[]
+Vehicle.OBD.TimeSinceDTCCleared,"4509","sensor","uint32","min","","","PID 4E - Time since trouble codes cleared","","","",[]
+Vehicle.OBD.MaxMAF,"4510","sensor","float","g/s","","","PID 50 - Maximum flow for mass air flow sensor","","","",[]
+Vehicle.OBD.FuelType,"4511","sensor","string","","","","PID 51 - Fuel type","","","",[]
+Vehicle.OBD.EthanolPercent,"4512","sensor","uint8","percent","","","PID 52 - Percentage of ethanol in the fuel","","","",[]
+Vehicle.OBD.EVAPVaporPressureAbsolute,"4513","sensor","float","kpa","","","PID 53 - Absolute evaporative purge (EVAP) system pressure","","","",[]
+Vehicle.OBD.EVAPVaporPressureAlternate,"4514","sensor","float","pa","","","PID 54 - Alternate evaporative purge (EVAP) system pressure","","","",[]
+Vehicle.OBD.ShortTermO2Trim1,"4515","sensor","uint8","percent","","","PID 55 - Short term secondary O2 trim - Bank 1","","","",[]
+Vehicle.OBD.LongTermO2Trim1,"4516","sensor","uint8","percent","","","PID 56 - Long term secondary O2 trim - Bank 1","","","",[]
+Vehicle.OBD.ShortTermO2Trim2,"4517","sensor","uint8","percent","","","PID 57 - Short term secondary O2 trim - Bank 2","","","",[]
+Vehicle.OBD.LongTermO2Trim2,"4518","sensor","uint8","percent","","","PID 58 - Long term secondary O2 trim - Bank 2","","","",[]
+Vehicle.OBD.FuelRailPressureAbsolute,"4519","sensor","float","kpa","","","PID 59 - Absolute fuel rail pressure","","","",[]
+Vehicle.OBD.RelativeAcceleratorPosition,"4520","sensor","uint8","percent","","","PID 5A - Relative accelerator pedal position","","","",[]
+Vehicle.OBD.HybridBatteryRemaining,"4521","sensor","uint8","percent","","","PID 5B - Remaining life of hybrid battery","","","",[]
+Vehicle.OBD.OilTemperature,"4522","sensor","uint8","celsius","","","PID 5C - Engine oil temperature","","","",[]
+Vehicle.OBD.FuelInjectionTiming,"4523","sensor","int16","degrees","","","PID 5D - Fuel injection timing","","","",[]
+Vehicle.OBD.FuelRate,"4524","sensor","float","l/h","","","PID 5E - Engine fuel rate","","","",[]
+
