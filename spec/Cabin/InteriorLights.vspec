@@ -44,118 +44,18 @@
 #
 # First / front row lights
 #
-- Row1:
+- Spotlight:
   type: branch
-  description: Front lights
+  extension: Row[1,4]
+  description: Spotlight for a specific area in the vehicle.
 
-- Row1.Left:
-  type: branch
-  description: Left front lights
-
-- Row1.IsSharedOn:
+- Spotlight.IsSharedOn:
   datatype: boolean
   type: sensor
-  description: Is light shared across first row on
+  description: Is a shared light across a specific row on
 
-- Row1.Left.IsPassengerOn:
+- Spotlight.IsPassengerOn:
   datatype: boolean
-  type: actuator
-  description: Is passenger light on
-
-- Row1.Right:
-  type: branch
-  description: Right front lights
-
-- Row1.Right.IsPassengerOn:
-  datatype: boolean
-  type: actuator
-  description: Is passenger light on
-
-
-
-- Row2:
-  type: branch
-  description: Front lights
-
-- Row2.Left:
-  type: branch
-  description: Left second row lights
-
-- Row2.IsSharedOn:
-  datatype: boolean
-  type: sensor
-  description: Is light shared across second row on
-
-- Row2.Left.IsPassengerOn:
-  datatype: boolean
-  type: actuator
-  description: Is passenger light on
-
-- Row2.Right:
-  type: branch
-  description: Right second row lights
-
-- Row2.Right.IsPassengerOn:
-  datatype: boolean
-  type: actuator
-  description: Is passenger light on
-
-
-
-
-- Row3:
-  type: branch
-  description: Front lights
-
-- Row3.Left:
-  type: branch
-  description: Left third row lights
-
-- Row3.IsSharedOn:
-  datatype: boolean
-  type: sensor
-  description: Is light shared third across row on
-
-- Row3.Left.IsPassengerOn:
-  datatype: boolean
-  type: actuator
-  description: Is passenger light on
-
-- Row3.Right:
-  type: branch
-  description: Right third row lights
-
-- Row3.Right.IsPassengerOn:
-  datatype: boolean
-  type: actuator
-  description: Is passenger light on
-
-
-
-
-- Row4:
-  type: branch
-  description: Front lights
-
-- Row4.Left:
-  type: branch
-  description: Left fourth row lights
-
-- Row4.IsSharedOn:
-  datatype: boolean
-  type: sensor
-  description: Is light shared across fourth row on
-
-- Row4.Left.IsPassengerOn:
-  datatype: boolean
-  type: actuator
-  description: Is passenger light on
-
-- Row4.Right:
-  type: branch
-  description: Right fourth row lights
-
-- Row4.Right.IsPassengerOn:
-  datatype: boolean
+  extension: ["Left","Right"]
   type: actuator
   description: Is passenger light on

@@ -26,8 +26,33 @@
 - HVAC:
   type: branch
   description: Climate control
-
 #include HVAC.vspec HVAC
+
+- HVAC.IsRecirculationActive:
+  datatype: boolean
+  type: actuator
+  description: Is recirculation active.
+
+- HVAC.IsFrontDefrosterActive:
+  datatype: boolean
+  type: actuator
+  description: Is front defroster active.
+
+- HVAC.IsRearDefrosterActive:
+  datatype: boolean
+  type: actuator
+  description: Is rear defroster active.
+
+- HVAC.IsAirConditioningActive:
+  datatype: boolean
+  type: actuator
+  description: Is Air conditioning active.
+
+- HVAC.AmbientAirTemperature:
+  datatype: float
+  type: sensor
+  unit: celsius
+  description: Ambient air temperature
 
 ##
 # Infotainment
@@ -98,90 +123,18 @@
 ##
 - Door:
   type: branch
+  extension:
+    - Row[1,4]
+    - ["Left","Right"]
   description: All doors, including windows and switches
+#include SingleDoor.vspec Door
 
-- Door.Count:
+- DoorCount:
   datatype: uint8
   type: attribute
   value: 0
   description: Number of doors in vehicle
 
-#
-# Front row of doors
-#
-- Door.Row1:
-  type: branch
-  description: Front doors
-
-- Door.Row1.Left:
-  type: branch
-  description: Left front door
-
-#include SingleDoor.vspec Door.Row1.Left
-
-- Door.Row1.Right:
-  type: branch
-  description: Right front door
-
-#include SingleDoor.vspec Door.Row1.Right
-
-#
-# Second row of doors.
-#
-- Door.Row2:
-  type: branch
-  description: Second row doors
-
-- Door.Row2.Left:
-  type: branch
-  description: Left second row door
-
-#include SingleDoor.vspec Door.Row2.Left
-
-- Door.Row2.Right:
-  type: branch
-  description: Right second row door
-
-#include SingleDoor.vspec Door.Row2.Right
-
-#
-# Third row of doors.
-#
-- Door.Row3:
-  type: branch
-  description: Third row doors
-
-- Door.Row3.Left:
-  type: branch
-  description: Left third row door
-
-#include SingleDoor.vspec Door.Row3.Left
-
-- Door.Row3.Right:
-  type: branch
-  description: Right third row door
-
-#include SingleDoor.vspec Door.Row3.Right
-
-
-#
-# Fourth row of doors.
-#
-- Door.Row4:
-  type: branch
-  description: Fourth row doors
-
-- Door.Row4.Left:
-  type: branch
-  description: Left fourth row door
-
-#include SingleDoor.vspec Door.Row4.Left
-
-- Door.Row4.Right:
-  type: branch
-  description: Right fourth row door
-
-#include SingleDoor.vspec Door.Row4.Right
 
 
 ##
@@ -196,207 +149,35 @@
 
 - Seat:
   type: branch
+  extension:
+    - Row[1,4]
+    - Pos[1,5]
   description: All seats.
+#include SingleSeat.vspec Seat
 
 #
 # Seat attributes.
 #
-- Seat.DriverPosition:
+- DriverPosition:
   datatype: uint8
   type: attribute
   value: 0
   description: The position of the driver seat in row 1. (1-5)
 
-- Seat.RowCount:
+- SeatRowCount:
   datatype: uint8
   type: attribute
   value: 0
   description: Number of seat rows in vehicle
 
-- Seat.Row1PosCount:
+- SeatPosCount:
+  extension: Row[1,4]
   datatype: uint8
   type: attribute
   value: 0
-  description: Number of seats across row 1 (frontmost)
-
-- Seat.Row2PosCount:
-  datatype: uint8
-  type: attribute
-  value: 0
-  description: Number of seats across row 2
-
-- Seat.Row3PosCount:
-  datatype: uint8
-  type: attribute
-  value: 0
-  description: Number of seats across row 3
+  description: Number of seats across each row from the front to the rear
 
 
-- Seat.Row4PosCount:
-  datatype: uint8
-  type: attribute
-  value: 0
-  description: Number of seats across row 4
-
-- Seat.Row5PosCount:
-  datatype: uint8
-  type: attribute
-  value: 0
-  description: Number of seats across row 5
-
-#
-# Front row seats signals.
-#
-- Seat.Row1:
-  type: branch
-  description: Front seats
-
-- Seat.Row1.Pos1:
-  type: branch
-  description: First seat from left, front row
-
-#include SingleSeat.vspec Seat.Row1.Pos1
-
-- Seat.Row1.Pos2:
-  type: branch
-  description: Second seat from left, front row
-
-#include SingleSeat.vspec Seat.Row1.Pos2
-
-- Seat.Row1.Pos3:
-  type: branch
-  description: Third seat from left, front row
-
-#include SingleSeat.vspec Seat.Row1.Pos3
-
-- Seat.Row1.Pos4:
-  type: branch
-  description: Fourth seat from left, front row
-
-#include SingleSeat.vspec Seat.Row1.Pos4
-
-- Seat.Row1.Pos5:
-  type: branch
-  description: Fifth seat from left, front row
-
-#include SingleSeat.vspec Seat.Row1.Pos5
-
-
-
-#
-# Second row seats
-#
-- Seat.Row2:
-  type: branch
-  description: Front seats
-
-- Seat.Row2.Pos1:
-  type: branch
-  description: First seat from left, second row
-
-#include SingleSeat.vspec Seat.Row2.Pos1
-
-- Seat.Row2.Pos2:
-  type: branch
-  description: Second seat from left, second row
-
-#include SingleSeat.vspec Seat.Row2.Pos2
-
-- Seat.Row2.Pos3:
-  type: branch
-  description: Third seat from left, second row
-
-#include SingleSeat.vspec Seat.Row2.Pos3
-
-- Seat.Row2.Pos4:
-  type: branch
-  description: Fourth seat from left, second row
-
-#include SingleSeat.vspec Seat.Row2.Pos4
-
-- Seat.Row2.Pos5:
-  type: branch
-  description: Fifth seat from left, second row
-
-#include SingleSeat.vspec Seat.Row2.Pos5
-
-
-
-#
-# Third row seats
-#
-- Seat.Row3:
-  type: branch
-  description: Front seats
-
-- Seat.Row3.Pos1:
-  type: branch
-  description: First seat from left, third row
-
-#include SingleSeat.vspec Seat.Row3.Pos1
-
-- Seat.Row3.Pos2:
-  type: branch
-  description: Third seat from left, third row
-
-#include SingleSeat.vspec Seat.Row3.Pos2
-
-- Seat.Row3.Pos3:
-  type: branch
-  description: Third seat from left, third row
-
-#include SingleSeat.vspec Seat.Row3.Pos3
-
-- Seat.Row3.Pos4:
-  type: branch
-  description: Fourth seat from left, third row
-
-#include SingleSeat.vspec Seat.Row3.Pos4
-
-- Seat.Row3.Pos5:
-  type: branch
-  description: Fifth seat from left, third row
-
-#include SingleSeat.vspec Seat.Row3.Pos5
-
-
-
-#
-# Fourth row seats
-#
-- Seat.Row4:
-  type: branch
-  description: Front seats
-
-- Seat.Row4.Pos1:
-  type: branch
-  description: First seat from left, fourth row
-
-#include SingleSeat.vspec Seat.Row4.Pos1
-
-- Seat.Row4.Pos2:
-  type: branch
-  description: Fourth seat from left, fourth row
-
-#include SingleSeat.vspec Seat.Row4.Pos2
-
-- Seat.Row4.Pos3:
-  type: branch
-  description: Fourth seat from left, fourth row
-
-#include SingleSeat.vspec Seat.Row4.Pos3
-
-- Seat.Row4.Pos4:
-  type: branch
-  description: Fourth seat from left, fourth row
-
-#include SingleSeat.vspec Seat.Row4.Pos4
-
-- Seat.Row4.Pos5:
-  type: branch
-  description: Fifth seat from left, fourth row
-
-#include SingleSeat.vspec Seat.Row4.Pos5
 
 ##
 # Convertible roof status

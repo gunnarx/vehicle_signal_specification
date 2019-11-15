@@ -73,120 +73,65 @@
 # Axle definition
 #
 - Axle:
+  extension:
+    - Row[1,2]
   type: branch
   description: Axle signals
 
-- Axle.Count:
+- AxleCount:
   datatype: uint8
   type: attribute
   value: 2
   description: Number of axles on the vehicle
 
-- Axle.Row1:
-  type: branch
-  description: Axle signals for first row
-
-- Axle.Row2:
-  type: branch
-  description: Axle signals for second row
 
 #
 # Axle attributes
 #
-- Axle.Row1.WheelCount:
+- Axle.WheelCount:
   datatype: uint8
   type: attribute
   description: Number of wheels on the first axle
 
-- Axle.Row1.WheelDiameter:
+- Axle.WheelDiameter:
   datatype: uint8
   type: attribute
   unit: inch
   description: Diameter of wheels (without tires), in inches, as per ETRO / TRA standard.
 
-- Axle.Row1.WheelWidth:
+- Axle.WheelWidth:
   datatype: uint8
   type: attribute
   unit: inch
   description: Width of wheels (without tires), in inches, as per ETRO / TRA standard.
 
-# Axle.Row2.WheelCount missing?
-
-- Axle.Row2.WheelDiameter:
-  datatype: uint8
-  type: attribute
-  unit: inch
-  description: Diameter of wheels (without tires), in inches, as per ETRO / TRA standard.
-
-- Axle.Row2.WheelWidth:
-  datatype: uint8
-  type: attribute
-  unit: inch
-  description: Width of wheels (without tires), in inches, as per ETRO / TRA standard.
 
 #
 # Tire attributes
 #
 
-- Axle.Row1.TireDiameter:
+- Axle.TireDiameter:
   datatype: uint8
   type: attribute
   unit: inch
   description: Diameter of tires, in inches, as per ETRO / TRA standard.
 
-- Axle.Row1.TireWidth:
+- Axle.TireWidth:
   datatype: uint8
   type: attribute
   unit: inch
   description: Width of tires, in inches, as per ETRO / TRA standard.
 
-- Axle.Row2.TireDiameter:
-  datatype: uint8
-  type: attribute
-  unit: inch
-  description: Diameter of tires, in inches, as per ETRO / TRA standard.
-
-- Axle.Row2.TireWidth:
-  datatype: uint8
-  type: attribute
-  unit: inch
-  description: Width of tires, in inches, as per ETRO / TRA standard.
 
 #
 # Wheels on Axles
 #
-- Axle.Row1.Wheel:
+- Axle.Wheel:
+  extension: ["Left","Right"]
   type: branch
   description: Brake signals for first row
 
-- Axle.Row1.Wheel.Left:
-  type: branch
-  description: Row1 wheel left.
-
-#include Wheel.vspec Axle.Row1.Wheel.Left
-
-- Axle.Row1.Wheel.Right:
-  type: branch
-  description: Row1 wheel right.
-
-#include Wheel.vspec Axle.Row1.Wheel.Right
-
-- Axle.Row2.Wheel:
-  type: branch
-  description: Wheel signals for second row
-
-- Axle.Row2.Wheel.Left:
-  type: branch
-  description: Row2 wheel left.
-
-#include Wheel.vspec Axle.Row2.Wheel.Left
-
-- Axle.Row2.Wheel.Right:
-  type: branch
-  description: Row2 wheel right.
-
-#include Wheel.vspec Axle.Row2.Wheel.Right
-
+#include Wheel.vspec Axle.Wheel
 
 #
 # Parking Brake

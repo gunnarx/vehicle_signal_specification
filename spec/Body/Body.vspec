@@ -83,85 +83,42 @@
 #
 - Windshield:
   type: branch
+  extension: ["Front", "Rear"]
   description: Windshield signals
 
 #
 # Front windshield
 #
-- Windshield.Front:
-  type: branch
-  description: Front windshield signals
 
-- Windshield.Front.Wiping:
+- Windshield.Wiping:
   type: branch
   description: Front windshield wiper signals
 
-- Windshield.Front.Wiping.Status:
+- Windshield.Wiping.Status:
   datatype: string
   type: actuator
   enum: ["off", "slow", "medium", "fast", "interval", "rainsensor"]
   description: Front wiper status
 
-- Windshield.Front.Heating:
+- Windshield.Heating:
   type: branch
   description: Front windshield heater signals
 
-- Windshield.Front.Heating.Status:
+- Windshield.Heating.Status:
   datatype: boolean
   type: actuator
   description: Front windshield heater status. 0 - off, 1 - on
 
-- Windshield.Front.WasherFluid:
+- Windshield.WasherFluid:
   type: branch
   description: Front windshield washer fluid signals
 
-- Windshield.Front.WasherFluid.LevelLow:
+- Windshield.WasherFluid.LevelLow:
   datatype: boolean
   type: sensor
   description: Low level indication for washer fluid. True = Level Low. False = Level OK.
 
-- Windshield.Front.WasherFluid.Level:
-  datatype: uint8
-  unit: percent
-  type: sensor
-  description: Washer fluid level as a percent. 0 = Empty. 100 = Full.
-
-#
-# Rear Windshield
-#
-- Windshield.Rear:
-  type: branch
-  description: Rear windshield signals
-
-- Windshield.Rear.Wiping:
-  type: branch
-  description: Rear windshield wiper signals
-
-- Windshield.Rear.Wiping.Status:
-  datatype: string
-  type: actuator
-  enum: ["off", "slow", "medium", "fast", "interval", "rainsensor"]
-  description: Rear wiper status
-
-- Windshield.Rear.Heating:
-  type: branch
-  description: Rear windshield heater signals
-
-- Windshield.Rear.Heating.Status:
-  datatype: boolean
-  type: actuator
-  description: Rear windshield heater status. 0 - off, 1 - on
-
-- Windshield.Rear.WasherFluid:
-  type: branch
-  description: Rear windshield washer fluid signals
-
-- Windshield.Rear.WasherFluid.LevelLow:
-  datatype: boolean
-  type: sensor
-  description: Low level indication for washer fluid. True = Level Low. False = Level OK.
-
-- Windshield.Rear.WasherFluid.Level:
+- Windshield.WasherFluid.Level:
   datatype: uint8
   unit: percent
   type: sensor
@@ -185,18 +142,7 @@
 ##
 - Mirrors:
   type: branch
+  extension: ["Left", "Right"]
   description: All mirrors
-
-- Mirrors.Left:
-  type: branch
-  description: Left mirrors
-
 # Include mirrors specification and attach it to the Mirrors branch
-#include ExteriorMirrors.vspec Mirrors.Left
-
-- Mirrors.Right:
-  type: branch
-  description: Right mirrors
-
-# Include mirrors specification and attach it to the Mirrors branch
-#include ExteriorMirrors.vspec Mirrors.Right
+#include ExteriorMirrors.vspec Mirrors

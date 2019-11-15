@@ -83,33 +83,18 @@
   type: sensor
   description: Indicates if obstacle sensor system incurred an error condition. True = Error. False = No Error.
 
-- ObstacleDetection.DistanceToObject:
+- ObstacleDetection.Input:
+  extension:
+    - ["Front","Rear"]
+    - ["Left", "Right"]
   type: branch
-  description: Distance signals form Obstacle Sensor System
+  description: Direct sensor input on obstacle detection
 
-- ObstacleDetection.DistanceToObject.FrontLeft:
+- ObstacleDetection.Input.DistanceToObject:
   datatype: uint16
   type: sensor
   unit: m
-  description: Front left distance to object in meters
-
-- ObstacleDetection.DistanceToObject.FrontRight:
-  datatype: uint16
-  type: sensor
-  unit: m
-  description: Front right distance to object in meters
-
-- ObstacleDetection.DistanceToObject.RearLeft:
-  datatype: uint16
-  type: sensor
-  unit: m
-  description: Rear left distance to object in meters
-
-- ObstacleDetection.DistanceToObject.RearRight:
-  datatype: uint16
-  type: sensor
-  unit: m
-  description: Rear right distance to object in meters
+  description: Distance to object in meters
 
 
 #

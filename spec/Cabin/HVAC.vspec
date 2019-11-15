@@ -10,65 +10,13 @@
 # All HVAC-originated signals
 #
 
-- Row1:
+- Station:
   type: branch
-  description: Frontmost row HVAC.
-
-- Row1.Left:
-  type: branch
-  description: Frontmost row left HVAC.
-
-- Row1.Right:
-  type: branch
-  description: Frontmost row right HVAC.
-
-#include SingleHVACStation.vspec Row1.Left
-#include SingleHVACStation.vspec Row1.Right
-
-- Row2:
-  type: branch
-  description: Second row HVAC.
-
-- Row2.Left:
-  type: branch
-  description: Second row left HVAC.
-
-- Row2.Right:
-  type: branch
-  description: Second row right HVAC.
-
-#include SingleHVACStation.vspec Row2.Left
-#include SingleHVACStation.vspec Row2.Right
-
-- Row3:
-  type: branch
-  description: Third row HVAC.
-
-- Row3.Left:
-  type: branch
-  description: Third row left HVAC.
-
-- Row3.Right:
-  type: branch
-  description: Third row right HVAC.
-
-#include SingleHVACStation.vspec Row3.Left
-#include SingleHVACStation.vspec Row3.Right
-
-- Row4:
-  type: branch
-  description: Fourth row HVAC.
-
-- Row4.Left:
-  type: branch
-  description: Fourth row left HVAC.
-
-- Row4.Right:
-  type: branch
-  description: Fourth row right HVAC.
-
-#include SingleHVACStation.vspec Row4.Left
-#include SingleHVACStation.vspec Row4.Right
+  extension:
+    - Row[1,4]
+    - ["Left","Right"]
+  description: HVAC for single station in the vehicle
+#include SingleHVACStation.vspec Station
 
 - IsRecirculationActive:
   datatype: boolean
