@@ -83,7 +83,7 @@
 #
 - Windshield:
   type: branch
-  extension: ["Front", "Rear"]
+  instances: ["Front", "Rear"]
   description: Windshield signals
 
 #
@@ -142,7 +142,7 @@
 ##
 - Mirrors:
   type: branch
-  extension: ["Left", "Right"]
+  instances: ["Left", "Right"]
   description: All mirrors
 # Include mirrors specification and attach it to the Mirrors branch
 #include ExteriorMirrors.vspec Mirrors

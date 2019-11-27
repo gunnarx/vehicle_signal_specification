@@ -12,7 +12,7 @@
 
 - Station:
   type: branch
-  extension:
+  instances:
     - Row[1,4]
     - ["Left","Right"]
   description: HVAC for single station in the vehicle

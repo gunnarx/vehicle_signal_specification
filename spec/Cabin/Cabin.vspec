@@ -123,7 +123,7 @@
 ##
 - Door:
   type: branch
-  extension:
+  instances:
     - Row[1,4]
     - ["Left","Right"]
   description: All doors, including windows and switches
@@ -149,7 +149,7 @@
 
 - Seat:
   type: branch
-  extension:
+  instances:
     - Row[1,4]
     - Pos[1,5]
   description: All seats.
@@ -171,7 +171,7 @@
   description: Number of seat rows in vehicle
 
 - SeatPosCount:
-  extension: Row[1,4]
+  instances: Row[1,4]
   datatype: uint8
   type: attribute
   value: 0

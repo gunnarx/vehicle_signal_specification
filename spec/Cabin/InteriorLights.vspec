@@ -46,7 +46,7 @@
 #
 - Spotlight:
   type: branch
-  extension: Row[1,4]
+  instances: Row[1,4]
   description: Spotlight for a specific area in the vehicle.
 
 - Spotlight.IsSharedOn:
@@ -56,6 +56,6 @@
 
 - Spotlight.IsPassengerOn:
   datatype: boolean
-  extension: ["Left","Right"]
+  instances: ["Left","Right"]
   type: actuator
   description: Is passenger light on

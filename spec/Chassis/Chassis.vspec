@@ -73,7 +73,7 @@
 # Axle definition
 #
 - Axle:
-  extension:
+  instances:
     - Row[1,2]
   type: branch
   description: Axle signals
@@ -127,7 +127,7 @@
 # Wheels on Axles
 #
 - Axle.Wheel:
-  extension: ["Left","Right"]
+  instances: ["Left","Right"]
   type: branch
   description: Brake signals for first row
 
