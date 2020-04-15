@@ -10,24 +10,46 @@
 # Battery management system for EV / Hybrids
 #
 
-- BatteryTemperature:
+- Battery:
+  type: branch
+  description: Battery status
+
+- Battery.Temperature:
   datatype: float
   type: sensor
   unit: celsius
   description: Temperature of the battery pack
 
-- BatteryCapacity:
-  datatype: int8
+- Battery.StateOfCharge:
+  datatype: uint8
   type: sensor
   unit: percent
   min: 0
   max: 100
-  description: Remaining capacity of the batter pack
+  description: The current charging level as a percentage of original battery performance.
 
-- LowBatteryLevel:
+- Battery.LowLevel:
   datatype: Boolean
   type: sensor
   description: Indicates that the battery level is low
+
+- Battery.AccumulatedChargeEnergy:
+  datatype: float
+  type: sensor
+  unit: kWh
+  description: The accumulated energy delivered to the battery during charging.
+
+- Battery.AccumulatedConsumedEnergy:
+  datatype: float
+  type: sensor
+  unit: kWh
+  description: The accumulated energy leaving HV battery for propulsion and auxiliary loads.
+
+- Battery.AccumulatedBrakingEnergy:
+  datatype: float
+  type: sensor
+  unit: kWh
+  description: The accumulated energy delivered to the battery from regenerative braking.
 
 - ChargingInlet:
   datatype: string
