@@ -2,7 +2,7 @@
 git:
   submodules: true
 
-language: python
+language: python3
 
 env:
   global:
@@ -13,8 +13,10 @@ env:
 install:
   - curl -LO https://github.com/gohugoio/hugo/releases/download/v${HUGO_VER}/hugo_${HUGO_VER}_Linux-64bit.deb
   - sudo dpkg -i hugo_${HUGO_VER}_Linux-64bit.deb
-  - pip install pyyaml
-  - cd ${TOOLS_DIR} && python setup.py -q install && cd ..
+  - cd ${TOOLS_DIR} 
+  - pip3 install -r requirements.txt
+  - python3 setup.py -q install
+  - cd ..
 
 script:
   - make clean json deploy
