@@ -2,9 +2,9 @@
 # Makefile to generate specifications
 #
 
-.PHONY: clean all travis_targets json franca csv tests binary protobuf ocf c install deploy
+.PHONY: clean all travis_targets json franca csv tests binary protobuf graphql ocf c install deploy
 
-all: clean json franca csv binary tests protobuf
+all: clean json franca csv binary tests protobuf graphql
 
 # All mandatory targets that shall be built and pass on each pull request for
 # vehicle-signal-specification or vss-tools
@@ -17,7 +17,7 @@ travis_targets: clean json franca binary csv tests deploy
 # from time to time
 # Can be run from e.g. travis with "make -k travis_optional || true" to continue
 # even if errors occur and not do not halt travis build if errors occur
-travis_optional: clean c ocf protobuf
+travis_optional: clean c ocf protobuf graphql
 
 DESTDIR?=/usr/local
 TOOLSDIR?=./vss-tools
@@ -43,6 +43,9 @@ binary:
 
 protobuf:
 	${TOOLSDIR}/contrib/vspec2protobuf.py -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).proto
+
+graphql:
+	${TOOLSDIR}/contrib/vspec2graphql.py -i:spec/VehicleSignalSpecification.id -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).graphql.ts
 
 ocf:
 	${TOOLSDIR}/contrib/ocf/vspec2ocf.py -i:spec/VehicleSignalSpecification.id:1 -I ./spec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).ocf.json
